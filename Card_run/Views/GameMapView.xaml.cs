@@ -68,7 +68,7 @@ namespace Card_run.Views
                 
                 // ИЗМЕНЕНИЕ: Обновлена логика окрашивания, стартовая точка теперь видна
                 if (node.IsPlayerCurrentPosition) ellipse.Fill = Brushes.HotPink;
-                else if (node.IsPlayerStart) ellipse.Fill = Brushes.Cyan; // НОВОЕ: Стартовая точка
+                else if (node.IsPlayerStart) ellipse.Fill = Brushes.LightGray; // НОВОЕ: Стартовая точка
                 else if (node.IsShop) ellipse.Fill = Brushes.Yellow;
                 else if (node.IsFinish) ellipse.Fill = Brushes.Green;
                 else if (_gameState.HunterControlledNodes.Contains(node.Id) && node.IsVisitedByPlayerHunter)

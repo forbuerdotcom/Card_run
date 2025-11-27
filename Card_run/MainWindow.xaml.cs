@@ -28,7 +28,7 @@ namespace Card_run
 
             _gameMapView.MovePlayerRequested += OnPlayerMoved;
             _battleView.ReturnToMap += ShowMap;
-            _shopView.ReturnToMap += OnShopExit; // ИЗМЕНЕНИЕ: Создаем отдельный метод для выхода из магазина
+            _shopView.ReturnToMap += OnShopExit;
             
             MainContentControl.Content = _mainMenu;
         }
@@ -61,16 +61,15 @@ namespace Card_run
                 }
                 _gameState.PlayerPosition.IsPlayerCurrentPosition = true;
 
+                // ИЗМЕНЕНИЕ: Логика больше не зависит от флага GameStarted
                 if (_gameState.HunterControlledNodes.Contains(destinationNode.Id))
                 {
                     MessageBox.Show("Ты вошел в зараженную зону!");
                 }
 
-                // ИЗМЕНЕНИЕ: Обработка хода и проверка концовки теперь вынесены за пределы if/else
                 ProcessHunterExpansion();
-                _gameMapView.SetGameState(_gameState); // Перерисовываем карту в любом случае
+                _gameMapView.SetGameState(_gameState);
 
-                // НОВОЕ: Проверяем, зашел ли игрок в магазин
                 if (_gameState.PlayerPosition.IsShop)
                 {
                     MainContentControl.Content = _shopView;
@@ -82,11 +81,9 @@ namespace Card_run
             }
         }
 
-        // НОВЫЙ МЕТОД: Вызывается при выходе из магазина
         private void OnShopExit()
         {
             ShowMap();
-            // После выхода из магазина нужно проверить условия победы
             CheckGameEnd();
         }
 

@@ -26,3 +26,4 @@ D:\Предметы 3 семестр\Теоретическая информат
 D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\Views\BattleView.baml
 D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\Views\ShopView.baml
 D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\Views\ShopView.g.cs
+D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.sourcelink.json

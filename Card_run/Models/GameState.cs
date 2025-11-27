@@ -16,7 +16,14 @@ namespace Card_run.Models
         public GameState(Graph graph)
         {
             CurrentGraph = graph;
+            // Размещаем игрока на стартовой точке
             PlayerPosition = CurrentGraph.Nodes.First(n => n.IsPlayerStart);
+            
+            // ИСПРАВЛЕНИЕ: Устанавливаем флаг, чтобы стартовая точка сразу окрасилась в цвет игрока
+            if (PlayerPosition != null)
+            {
+                PlayerPosition.IsPlayerCurrentPosition = true;
+            }
 
             HunterControlledNodes = new HashSet<int>();
             // Находим стартовую клетку охотника и заражаем ее
@@ -29,9 +36,6 @@ namespace Card_run.Models
 
         public bool MovePlayer(Node destinationNode)
         {
-            // ИЗМЕНЕНИЕ: Убрана проверка, запрещающая ход в зараженную клетку.
-            // Теперь игрок может ходить по фиолетовым зонам.
-
             bool isNeighbor = CurrentGraph.Edges.Contains((PlayerPosition.Id, destinationNode.Id)) ||
                               CurrentGraph.Edges.Contains((destinationNode.Id, PlayerPosition.Id));
 
@@ -41,7 +45,7 @@ namespace Card_run.Models
                 PlayerMoveCount++;
                 destinationNode.IsVisitedByPlayer = true;
 
-                // ИЗМЕНЕНИЕ: Если игрок зашел на клетку охотника, помечаем это.
+                // Если игрок зашел на клетку охотника, помечаем это.
                 if (HunterControlledNodes.Contains(destinationNode.Id))
                 {
                     destinationNode.IsVisitedByPlayerHunter = true;
@@ -59,7 +63,6 @@ namespace Card_run.Models
 
         public List<Node> GetAvailableMoves()
         {
-            // ИЗМЕНЕНИЕ: Убрано исключение зараженных клеток из списка доступных ходов.
             return CurrentGraph.Nodes.Where(n =>
                 (CurrentGraph.Edges.Contains((PlayerPosition.Id, n.Id)) ||
                  CurrentGraph.Edges.Contains((n.Id, PlayerPosition.Id)))
