@@ -6,7 +6,12 @@ namespace Card_run.Models
 {
     public class HunterAI
     {
-        public Node CalculateNextExpansion(GameState state)
+        /// <summary>
+        /// Вычисляет следующий ход на основе логики wp-калькулятора.
+        /// </summary>
+        /// <param name="state">Текущее состояние игры (Pre).</param>
+        /// <returns>Узел для захвата, который является вычисленным предусловием для достижения цели.</returns>
+        public Node CalculateWeakestPrecondition(GameState state)
         {
             // Колония начинает расширяться после 2-го хода игрока
             if (state.PlayerMoveCount < 2) return null;
@@ -14,72 +19,90 @@ namespace Card_run.Models
             var finishNode = state.CurrentGraph.Nodes.FirstOrDefault(n => n.IsFinish);
             if (finishNode == null) return null;
 
-            // 1. Всегда находим "границу" колонии - клетки, куда можно расшириться.
-            // Это гарантирует органический, пошаговый рост.
+            // --- Этап 1: Определение Постусловия (Post) ---
+            // Главная цель ИИ на первом этапе: окружить финиш.
+            // Post: IsFinishSurrounded(state, finishNode) == true
+
+            // --- Этап 2: Вычисление wp для достижения Post ---
+            // Чтобы окружить финиш (Post), необходимо захватить всех его соседей.
+            // wp(Post) = { n | n is neighbor of finishNode AND n is not controlled }
+            var uncontrolledFinishNeighbors = GetNeighbors(state.CurrentGraph, finishNode)
+                                                .Where(n => !state.HunterControlledNodes.Contains(n.Id) && !n.IsShop)
+                                                .ToList();
+
+            // --- Этап 3: Проверка достижимости wp из текущего состояния ---
+            // Мы можем захватить клетку, только если она находится на границе колонии.
+            // frontier = { n | n is neighbor of controlled cell AND n is not controlled }
+            var frontier = GetColonyFrontier(state);
+
+            // --- Этап 4: Вычисление итогового Предусловия (Pre) ---
+            // Итоговое действие (Pre) - это пересечение множества клеток для захвата (wp) и границы колонии (frontier).
+            // Pre = wp(Post) ∩ frontier
+            var actionTargets = uncontrolledFinishNeighbors.Intersect(frontier).ToList();
+
+            if (actionTargets.Any())
+            {
+                // Предусловие выполнено: мы можем захватить соседа финиша.
+                // Это самый прямой путь к достижению Post.
+                return actionTargets.First();
+            }
+            else
+            {
+                // --- Промежуточная цель, если прямое достижение Post невозможно ---
+                // Мы не можем захватить соседа финиша прямо сейчас.
+                // Новое Промежуточное Постусловие (Post_intermediate): приблизиться к финишу.
+                // Post_intermediate: distance(colony, finishNode) decreases
+
+                // --- Вычисление wp для Post_intermediate ---
+                // Чтобы приблизиться к финишу, нужно выбрать клетку на границе, которая ближе всего к нему.
+                // wp(Post_intermediate) = frontier.OrderBy(n => distance(n, finishNode))
+                var closestToFrontier = frontier
+                    .OrderBy(n => CalculateDistance(n, finishNode))
+                    .FirstOrDefault();
+
+                return closestToFrontier;
+            }
+        }
+
+        // --- Фаза 2: Захват оставшейся карты (когда финиш окружен) ---
+        /// <summary>
+        /// Вычисляет следующий ход после того, как финиш окружен.
+        /// </summary>
+        public Node CalculateExpansionAfterFinishSurrounded(GameState state)
+        {
             var frontier = GetColonyFrontier(state);
             if (!frontier.Any()) return null;
 
-            // --- ФАЗА 1: Окружить финиш ---
-            // Проверяем, окружен ли финиш.
-            if (!IsFinishSurrounded(state, finishNode))
-            {
-                // 2. Ищем на границе клетки, которые являются соседями финиша.
-                var finishNeighbors = GetNeighbors(state.CurrentGraph, finishNode);
-                var frontierNeighborsOfFinish = frontier.Where(n => finishNeighbors.Contains(n)).ToList();
-
-                if (frontierNeighborsOfFinish.Any())
-                {
-                    // 3. Если такие клетки есть, захватываем одну из них.
-                    // Колония "доползла" до финиша и начинает его окружать.
-                    return frontierNeighborsOfFinish.First();
-                }
-                else
-                {
-                    // 4. Если клеток у финиша на границе нет, значит, мы еще не до него добрались.
-                    // Выбираем ту клетку на границе, которая ближе всего к финишу.
-                    // Это обеспечивает направленное, но пошаговое движение к цели.
-                    var closestToFrontier = frontier
-                        .OrderBy(n => CalculateDistance(n, finishNode))
-                        .FirstOrDefault();
-                    return closestToFrontier;
-                }
-            }
-            // --- ФАЗА 2: Захватить всю оставшуюся карту ---
-            else
-            {
-                // Финиш окружен. Теперь просто захватываем самые "выгодные" клетки на границе.
-                var bestTarget = frontier
-                    .OrderByDescending(n => CalculateExpansionProfit(state, n))
-                    .FirstOrDefault();
-                return bestTarget;
-            }
+            // Постусловие (Post): Захватить самую "выгодную" клетку.
+            // wp(Post) = frontier.OrderByDescending(n => CalculateExpansionProfit(state, n))
+            var bestTarget = frontier
+                .OrderByDescending(n => CalculateExpansionProfit(state, n))
+                .FirstOrDefault();
+            return bestTarget;
         }
+
 
         // --- Вспомогательные методы ---
 
         /// <summary>
-        /// Проверяет, окружен ли финиш клетками охотника.
+        /// Проверяет, окружен ли финиш клетками охотника (Post-условие выполнено).
         /// </summary>
         private bool IsFinishSurrounded(GameState state, Node finishNode)
         {
             var finishNeighbors = GetNeighbors(state.CurrentGraph, finishNode);
-            // Финиш окружен, если все его соседи принадлежат охотнику.
             return finishNeighbors.All(n => state.HunterControlledNodes.Contains(n.Id));
         }
 
         /// <summary>
-        /// Возвращает список "граничных" клеток - соседей колонии, которые еще не захвачены.
-        /// Это ключ к органическому росту. Магазин никогда не будет целью для захвата.
+        /// Возвращает "границу" колонии - множество клеток, доступных для захвата.
         /// </summary>
         private List<Node> GetColonyFrontier(GameState state)
         {
             var frontier = new List<Node>();
-            // Проходим по всем захваченным клеткам
             foreach (var controlledId in state.HunterControlledNodes)
             {
                 var controlledNode = state.CurrentGraph.Nodes.First(n => n.Id == controlledId);
                 var neighbors = GetNeighbors(state.CurrentGraph, controlledNode);
-                // Если сосед не захвачен и не является магазином, он - часть границы
                 foreach (var neighbor in neighbors)
                 {
                     if (!state.HunterControlledNodes.Contains(neighbor.Id) && !neighbor.IsShop)
@@ -92,29 +115,19 @@ namespace Card_run.Models
         }
 
         /// <summary>
-        /// Вычисляет "выгоду" захвата клетки для второй фазы игры.
+        /// Вычисляет "выгоду" захвата клетки (используется для wp во второй фазе).
         /// </summary>
         private int CalculateExpansionProfit(GameState state, Node node)
         {
             int score = 100; // Базовая выгода
-
-            // Штраф за клетки, где был игрок.
-            if (node.IsVisitedByPlayer)
-            {
-                score -= 50;
-            }
-
-            // Бонус за клетки ближе к игроку, чтобы мешать ему.
+            if (node.IsVisitedByPlayer) score -= 50;
             var distToPlayer = CalculateDistance(node, state.PlayerPosition);
             score += (int)(50 - distToPlayer);
-
             return score;
         }
 
-        // Простое вычисление расстояния между двумя узлами.
         private double CalculateDistance(Node a, Node b) => Math.Sqrt(Math.Pow(a.X - b.X, 2) + Math.Pow(a.Y - b.Y, 2));
 
-        // Получение соседей узла.
         private List<Node> GetNeighbors(Graph graph, Node node)
         {
             return graph.Nodes.Where(n =>

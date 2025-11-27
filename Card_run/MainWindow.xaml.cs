@@ -55,19 +55,22 @@ namespace Card_run
 
             if (moveSuccessful)
             {
+                // Обновляем визуальное положение игрока
                 foreach (var node in _gameState.CurrentGraph.Nodes)
                 {
                     node.IsPlayerCurrentPosition = false;
                 }
                 _gameState.PlayerPosition.IsPlayerCurrentPosition = true;
 
-                // ИЗМЕНЕНИЕ: Логика больше не зависит от флага GameStarted
                 if (_gameState.HunterControlledNodes.Contains(destinationNode.Id))
                 {
                     MessageBox.Show("Ты вошел в зараженную зону!");
                 }
 
+                // Вызываем обновленную логику хода охотника
                 ProcessHunterExpansion();
+                
+                // Перерисовываем карту после хода охотника
                 _gameMapView.SetGameState(_gameState);
 
                 if (_gameState.PlayerPosition.IsShop)
@@ -81,19 +84,49 @@ namespace Card_run
             }
         }
 
-        private void OnShopExit()
-        {
-            ShowMap();
-            CheckGameEnd();
-        }
-
+        /// <summary>
+        /// Обрабатывает ход охотника, выбирая стратегию на основе состояния игры.
+        /// </summary>
         private void ProcessHunterExpansion()
         {
-            var nodeToInfect = _hunterAI.CalculateNextExpansion(_gameState);
+            Node nodeToInfect = null;
+            var finishNode = _gameState.CurrentGraph.Nodes.FirstOrDefault(n => n.IsFinish);
+
+            // Проверяем, окружен ли финиш, чтобы выбрать правильную стратегию ИИ
+            if (finishNode != null && IsFinishSurrounded(_gameState, finishNode))
+            {
+                // Фаза 2: Финиш окружен. Захватываем самые выгодные клетки на карте.
+                nodeToInfect = _hunterAI.CalculateExpansionAfterFinishSurrounded(_gameState);
+            }
+            else
+            {
+                // Фаза 1: Финиш не окружен. Используем wp-калькулятор, чтобы его окружить.
+                nodeToInfect = _hunterAI.CalculateWeakestPrecondition(_gameState);
+            }
+            
             if (nodeToInfect != null)
             {
                 _gameState.ExpandHunterColony(nodeToInfect);
             }
+        }
+
+        /// <summary>
+        /// Вспомогательный метод для проверки, окружен ли финиш.
+        /// </summary>
+        private bool IsFinishSurrounded(GameState state, Node finishNode)
+        {
+            if (finishNode == null) return true;
+            var neighbors = state.CurrentGraph.Nodes.Where(n =>
+                state.CurrentGraph.Edges.Contains((finishNode.Id, n.Id)) || state.CurrentGraph.Edges.Contains((n.Id, finishNode.Id))
+            ).ToList();
+
+            return neighbors.All(n => state.HunterControlledNodes.Contains(n.Id));
+        }
+
+        private void OnShopExit()
+        {
+            ShowMap();
+            CheckGameEnd();
         }
 
         private void CheckGameEnd()
