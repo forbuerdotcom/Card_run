@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Card_run.Views.GameMapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Card_run.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    
+    <!-- 
+        Canvas - это холст, на котором мы можем размещать элементы 
+        в любых координатах. x:Name="GraphCanvas" создает переменную 
+        с этим именем в C# коде, чтобы мы могли к нему обращаться.
+    -->
+    <Canvas x:Name="GraphCanvas" Background="LightGray">
+        <!-- Вершины (кружочки) и ребра (линии) будут добавлены сюда из кода C# -->
+    </Canvas>
+    
+</UserControl>
