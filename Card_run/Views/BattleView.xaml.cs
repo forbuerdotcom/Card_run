@@ -126,14 +126,6 @@ namespace Card_run.Views
 
         private void PerformDefence(Card actor, Card target)
         {
-            // Проверяем, что target является союзником actor
-            if ((_playerTeam.Contains(actor) && !_playerTeam.Contains(target)) ||
-                (_enemyTeam.Contains(actor) && !_enemyTeam.Contains(target)))
-            {
-                // Если target не является союзником, защищаем себя
-                target = actor;
-            }
-
             // Сбрасываем состояние ожидания цели
             _isWaitingForDefenceTarget = false;
             _defendingCard = null;
@@ -141,19 +133,65 @@ namespace Card_run.Views
             switch (actor.DefenceMove)
             {
                 case DefenceMove.SelfShield:
+                    // SelfShield всегда применяется к себе
+                    int selfShieldValue = actor.ShieldValue;
+                    actor.Shield += selfShieldValue;
+                    AddLogEntry(actor, "создает щит на", actor, $"прочность {actor.Shield}");
+                    break;
+
                 case DefenceMove.Shield:
-                    target.Shield += 5;
-                    AddLogEntry(actor, "создает щит на", target, $"прочность {target.Shield}");
+                    // Проверяем, что target является союзником actor
+                    Card shieldTarget = target;
+                    if ((_playerTeam.Contains(actor) && !_playerTeam.Contains(target)) ||
+                        (_enemyTeam.Contains(actor) && !_enemyTeam.Contains(target)))
+                    {
+                        // Если target не является союзником, защищаем себя
+                        shieldTarget = actor;
+                    }
+                    int shieldValue = actor.ShieldValue;
+                    shieldTarget.Shield += shieldValue;
+                    AddLogEntry(actor, "создает щит на", shieldTarget, $"прочность {shieldTarget.Shield}");
                     break;
+
                 case DefenceMove.SelfHeal:
-                case DefenceMove.Heal:
-                    int healAmount = (int)(target.MaxHP * 0.2);
-                    target.CurrentHP = Math.Min(target.MaxHP, target.CurrentHP + healAmount);
-                    AddLogEntry(actor, "исцеляет", target, $"восстановлено {healAmount} здоровья");
+                    // SelfHeal всегда применяется к себе, только если актор жив
+                    if (actor.Status == CardStatus.Alive)
+                    {
+                        int selfHealAmount = actor.HealValue;
+                        actor.CurrentHP = Math.Min(actor.MaxHP, actor.CurrentHP + selfHealAmount);
+                        AddLogEntry(actor, "исцеляет", actor, $"восстановлено {selfHealAmount} здоровья");
+                    }
+                    else
+                    {
+                        AddLogEntry(actor, "не может исцелить", actor, "цель мертва");
+                    }
                     break;
+
+                case DefenceMove.Heal:
+                    // Проверяем, что target является союзником actor
+                    Card healTarget = target;
+                    if ((_playerTeam.Contains(actor) && !_playerTeam.Contains(target)) ||
+                        (_enemyTeam.Contains(actor) && !_enemyTeam.Contains(target)))
+                    {
+                        // Если target не является союзником, лечим себя
+                        healTarget = actor;
+                    }
+                    // Проверяем, что цель лечения жива
+                    if (healTarget.Status == CardStatus.Alive)
+                    {
+                        int healAmount = actor.HealValue;
+                        healTarget.CurrentHP = Math.Min(healTarget.MaxHP, healTarget.CurrentHP + healAmount);
+                        AddLogEntry(actor, "исцеляет", healTarget, $"восстановлено {healAmount} здоровья");
+                    }
+                    else
+                    {
+                        AddLogEntry(actor, "не может исцелить", healTarget, "цель мертва");
+                    }
+                    break;
+
                 case DefenceMove.None:
                 default:
-                    AddLogEntry(actor, "пропускает ход", null, "");
+                    AddLogEntry(actor, "пропускает ход");
                     break;
             }
             EndTurn();
@@ -204,7 +242,7 @@ namespace Card_run.Views
                 {
                     resultMessage += "полный урон поглощен щитом.";
                 }
-                else // Случай, когда урон равен 0 после вычета защиты (но был > 0 до этого)
+                else // Случай, когда урон равен 0 после вычета защиты
                 {
                     resultMessage = "но атака полностью заблокирована защитой!";
                 }
@@ -217,7 +255,7 @@ namespace Card_run.Views
             {
                 defender.Status = CardStatus.Dead;
                 defender.CurrentHP = 0;
-                AddLogEntry(defender, "погибает", null, "");
+                AddLogEntry(defender, "погибает");
             }
 
             EndTurn();
@@ -553,6 +591,36 @@ namespace Card_run.Views
             };
 
             BattleLogPanel.Children.Add(logText);
+            var scrollViewer = (BattleLogPanel.Parent as ScrollViewer);
+            if (scrollViewer != null)
+            {
+                scrollViewer.ScrollToBottom();
+            }
+        }
+
+        private void AddLogEntry(Card actorCard, string action)
+        {
+            var logText = new TextBlock
+            {
+                Text = $"\"{actorCard.Name}\" {action}.",
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(5, 2, 5, 2)
+            };
+
+            // Определяем цвет по принадлежности к команде
+            if (_playerTeam.Contains(actorCard))
+            {
+                logText.Foreground = Brushes.LimeGreen;
+            }
+            else
+            {
+                logText.Foreground = Brushes.IndianRed;
+            }
+
+            // Добавляем запись в панель
+            BattleLogPanel.Children.Add(logText);
+
+            // Автоматически прокручиваем к новой записи
             var scrollViewer = (BattleLogPanel.Parent as ScrollViewer);
             if (scrollViewer != null)
             {

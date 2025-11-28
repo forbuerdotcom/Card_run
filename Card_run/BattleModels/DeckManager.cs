@@ -11,7 +11,6 @@ namespace Card_run.BattleModels
 
         public static List<Card> LoadDeck()
         {
-            // Если файл еще не создан (первый запуск), возвращаем пустую колоду
             if (!File.Exists(DeckFilePath))
             {
                 return new List<Card>();
