@@ -28,6 +28,18 @@ namespace Card_run.Views
         {
             _gameState = gameState;
             DrawGraph();
+            UpdateGoldAndScore();
+        }
+
+        private void UpdateGoldAndScore()
+        {
+            if (_gameState != null)
+            {
+                GoldTextBlock.Text = _gameState.GoldEarned.ToString();
+                // Формула счета: (узлы * 10) + (враги * 5) + (золото)
+                int score = (_gameState.NodesVisited * 10) + (_gameState.EnemiesDefeated * 5) + _gameState.GoldEarned;
+                ScoreTextBlock.Text = score.ToString();
+            }
         }
 
         private void GameMapView_SizeChanged(object sender, System.Windows.SizeChangedEventArgs e)
@@ -73,16 +85,25 @@ namespace Card_run.Views
                 else if (node.IsPlayerStart) nodeBrush = Brushes.LightGray;
                 else if (node.IsShop) nodeBrush = Brushes.Yellow;
                 else if (node.IsFinish) nodeBrush = Brushes.Green;
-                else if (node.IsBattleNode)
-                {
-                    if (node.BattleDifficulty == BattleDifficulty.Weak) nodeBrush = Brushes.LimeGreen;
-                    else if (node.BattleDifficulty == BattleDifficulty.Medium) nodeBrush = Brushes.IndianRed;
-                    else if (node.BattleDifficulty == BattleDifficulty.Strong) nodeBrush = Brushes.Black;
-                }
+                // Приоритет у цвета охотника - проверяем его первым
                 else if (isHunterControlled && node.IsVisitedByPlayerHunter)
                     nodeBrush = new SolidColorBrush(Color.FromRgb(200, 100, 200));
                 else if (isHunterControlled)
                     nodeBrush = new SolidColorBrush(Color.FromRgb(128, 0, 128));
+                else if (node.IsBattleNode)
+                {
+                    // Если боевой узел очищен, он серый (только если не заражен охотником)
+                    if (node.IsCleared)
+                    {
+                        nodeBrush = Brushes.LightGray;
+                    }
+                    else
+                    {
+                        if (node.BattleDifficulty == BattleDifficulty.Weak) nodeBrush = Brushes.LimeGreen;
+                        else if (node.BattleDifficulty == BattleDifficulty.Medium) nodeBrush = Brushes.IndianRed;
+                        else if (node.BattleDifficulty == BattleDifficulty.Strong) nodeBrush = Brushes.Black;
+                    }
+                }
                 else if (node.IsVisitedByPlayer) nodeBrush = Brushes.LightGray;
 
                 // Создаем контейнер для всех частей узла

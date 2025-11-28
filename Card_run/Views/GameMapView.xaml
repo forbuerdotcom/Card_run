@@ -12,8 +12,22 @@
         в любых координатах. x:Name="GraphCanvas" создает переменную 
         с этим именем в C# коде, чтобы мы могли к нему обращаться.
     -->
-    <Canvas x:Name="GraphCanvas" Background="LightGray">
-        <!-- Вершины (кружочки) и ребра (линии) будут добавлены сюда из кода C# -->
-    </Canvas>
-    
+    <Grid>
+        <Canvas x:Name="GraphCanvas" Background="LightGray">
+            <!-- Вершины (кружочки) и ребра (линии) будут добавлены сюда из кода C# -->
+        </Canvas>
+        
+        <!-- Панель с золотом и счетом в правом верхнем углу -->
+        <Border HorizontalAlignment="Right" VerticalAlignment="Top" 
+                BorderBrush="Gold" BorderThickness="2" CornerRadius="5" 
+                Background="#FF4A4A4A" Padding="15" Margin="20">
+            <StackPanel>
+                <TextBlock Text="Золото:" FontSize="18" Foreground="Gold" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock x:Name="GoldTextBlock" Text="0" FontSize="24" Foreground="White" FontWeight="Bold" Margin="0,0,0,15"/>
+                
+                <TextBlock Text="Счет:" FontSize="18" Foreground="Cyan" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock x:Name="ScoreTextBlock" Text="0" FontSize="24" Foreground="White" FontWeight="Bold"/>
+            </StackPanel>
+        </Border>
+    </Grid>
 </UserControl>

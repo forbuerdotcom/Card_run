@@ -27,6 +27,7 @@
         public bool IsBattleNode { get; set; }
         public BattleDifficulty BattleDifficulty { get; set; }
         public List<int> EnemyTeamIds { get; set; } // ID врагов для этого узла
+        public bool IsCleared { get; set; } // Очищен ли боевой узел (враги побеждены)
     }
 
     public enum BattleDifficulty
