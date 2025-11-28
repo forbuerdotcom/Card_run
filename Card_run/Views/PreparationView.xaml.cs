@@ -23,7 +23,10 @@ namespace Card_run.Views
         private void PreparationView_Loaded(object sender, RoutedEventArgs e)
         {
             _allCards = DataLoader.GetAllCards();
+            _playerDeck = new List<Card>();
+
             DrawAllCards();
+            UpdateDeckUI();
             UpdateConstraintUI();
         }
 
@@ -159,11 +162,25 @@ namespace Card_run.Views
         {
             if (_playerDeck.Any())
             {
+                DeckManager.SaveDeck(_playerDeck);
                 StartGameRequested?.Invoke(_playerDeck.Select(c => new Card(c)).ToList());
             }
             else
             {
                 MessageBox.Show("Вы не можете начать игру с пустой колодой!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void ClearDeck_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Вы уверены, что хотите очистить колоду?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                _playerDeck.Clear();
+
+                UpdateDeckUI();
+                UpdateConstraintUI();
             }
         }
 

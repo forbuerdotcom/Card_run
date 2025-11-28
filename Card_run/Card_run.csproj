@@ -9,10 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Assets\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Page Update="Views\MainMenu.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
@@ -21,12 +17,28 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Assets\card.png" />
+      <None Remove="Assets\cards_collection.png" />
+      <None Remove="Assets\card_outline.png" />
       <None Remove="Assets\MainMenu.png" />
+      <None Remove="Assets\sword.png" />
       <None Remove="Data\cards.json" />
       <EmbeddedResource Include="Data\cards.json" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
       <PackageReference Include="System.Text.Json" Version="10.0.0" />
+      <Resource Include="Assets\card.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\cards_collection.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\card_outline.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Assets\MainMenu.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\sword.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>
