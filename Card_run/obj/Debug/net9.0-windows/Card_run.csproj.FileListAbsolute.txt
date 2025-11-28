@@ -27,3 +27,44 @@ D:\Предметы 3 семестр\Теоретическая информат
 D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\Views\ShopView.baml
 D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\Views\ShopView.g.cs
 D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.sourcelink.json
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\Card_run.exe
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\Card_run.deps.json
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\Card_run.runtimeconfig.json
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\Card_run.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\Card_run.pdb
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\ShopView.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\BattleView.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\GameMapView.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\MainMenu.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\ShopView.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run_MarkupCompile.cache
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run_MarkupCompile.lref
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\MainWindow.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\BattleView.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\GameMapView.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\MainMenu.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.g.resources
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.AssemblyInfoInputs.cache
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.AssemblyInfo.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.csproj.CoreCompileInputs.cache
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.sourcelink.json
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\refint\Card_run.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.pdb
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.genruntimeconfig.cache
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\ref\Card_run.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\Newtonsoft.Json.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\System.IO.Pipelines.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\System.Text.Json.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.Text.Encodings.Web.dll
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.csproj.AssemblyReference.cache
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\BattleCardControl.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\BattleCardControl.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.csproj.Up2Date
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\GameOverView.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\GameOverView.g.cs

@@ -1,5 +1,4 @@
-﻿// Путь: Models/Node.cs
-namespace Card_run.Models
+﻿namespace Card_run.Models
 {
     public class Node
     {
@@ -11,7 +10,7 @@ namespace Card_run.Models
         public bool IsFinish { get; set; }
         public bool IsHunter { get; set; }
         public bool IsPlayerCurrentPosition { get; set; }
-        
+
         // НОВОЕ: Свойство для магазина
         public bool IsShop { get; set; }
 
@@ -24,5 +23,16 @@ namespace Card_run.Models
         /// Посещал ли игрок эту клетку охотника (фиолетовую зону).
         /// </summary>
         public bool IsVisitedByPlayerHunter { get; set; }
+
+        public bool IsBattleNode { get; set; }
+        public BattleDifficulty BattleDifficulty { get; set; }
+        public List<int> EnemyTeamIds { get; set; } // ID врагов для этого узла
+    }
+
+    public enum BattleDifficulty
+    {
+        Weak,   // Зеленый
+        Medium, // Красный
+        Strong  // Черный
     }
 }

@@ -1,0 +1,54 @@
+﻿<!-- Views/BattleCardControl.xaml -->
+<UserControl x:Class="Card_run.Views.BattleCardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="220" d:DesignWidth="150">
+    <Border x:Name="CardBorder" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="White"
+            Width="150" Height="220" MouseEnter="Card_MouseEnter" MouseLeave="Card_MouseLeave"
+            MouseLeftButtonUp="Card_MouseLeftButtonUp">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="CardName" Grid.Row="0" Text="{Binding Name}" FontWeight="Bold" TextAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="16"/>
+
+            <Image x:Name="CardImage" Grid.Row="1" Stretch="UniformToFill" Margin="5"/>
+
+            <!-- ИЗМЕНЕННАЯ ЧАСТЬ: Grid для характеристик -->
+            <Grid Grid.Row="2" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- HP -->
+                <Grid Grid.Column="0">
+                    <Ellipse Width="30" Height="30" Fill="Lime" Stroke="Black" StrokeThickness="1"/>
+                    <TextBlock Text="{Binding CurrentHP}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                </Grid>
+
+                <!-- Defence + Shield -->
+                <Grid Grid.Column="1">
+                    <Rectangle Width="30" Height="30" Fill="Gray" Stroke="Black" StrokeThickness="1"/>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Defence}" HorizontalAlignment="Center" FontSize="10" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Shield}" HorizontalAlignment="Center" FontSize="10" FontWeight="Bold" Foreground="LightBlue"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- AD -->
+                <Grid Grid.Column="2">
+                    <Polygon Points="0,30,20,0 40,30" Fill="Red" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.688,0.493"/>
+                    <TextBlock Text="{Binding AD}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

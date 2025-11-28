@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\obj\Debug\net9.0-windows\
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\
 Card_run
 none
 false
-TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-D:\Предметы 3 семестр\Теоретическая информатика\ЭТО ТЕСТОВАЯ ПАПКА, ТУТ БУДУТ ТЕСТОВЫЙ КУРСОЧИ\Card_run\Card_run\App.xaml
-5700884156
+TRACE;RELEASE;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\App.xaml
+7339644234
 
-131374191397
-200-44685031
-MainWindow.xaml;Views\BattleView.xaml;Views\GameMapView.xaml;Views\MainMenu.xaml;Views\ShopView.xaml;
+25-160838773
+40262577562
+MainWindow.xaml;Views\BattleCardControl.xaml;Views\BattleView.xaml;Views\GameMapView.xaml;Views\GameOverView.xaml;Views\MainMenu.xaml;Views\ShopView.xaml;
 
-False
+True
 

@@ -1,12 +1,21 @@
 ﻿// Путь: Models/GraphGenerator.cs
+using Card_run.BattleModels;
 using System.Collections.Generic;
 using System.Linq;
+using static Card_run.Models.Node;
 
 namespace Card_run.Models
 {
     public class GraphGenerator
     {
         private Random _random = new Random();
+        private List<Card> _allEnemyCards;
+
+        public GraphGenerator()
+        {
+            // Загружаем все возможные карты врагов один раз при создании генератора
+            _allEnemyCards = DataLoader.GetAllCards();
+        }
 
         public Graph Generate()
         {
@@ -114,6 +123,59 @@ namespace Card_run.Models
                 var shopNode = availableNodesForShop.OrderBy(x => _random.Next()).First();
                 shopNode.IsShop = true;
             }
+
+            var availableNodesForBattle = graph.Nodes
+                .Where(n => !n.IsPlayerStart && !n.IsFinish && !n.IsHunter && !n.IsShop)
+                .ToList();
+
+            if (!availableNodesForBattle.Any()) return;
+
+            int maxStrongNodes = 2;
+            int currentStrongNodes = 0;
+            int maxMediumNodes = 10;
+            int currentMediumNodes = 0;
+
+            foreach (var node in availableNodesForBattle)
+            {
+                node.IsBattleNode = true;
+
+                // Генерируем ID врагов для этого узла
+                node.EnemyTeamIds = GenerateEnemyTeamIds();
+
+                // Рассчитываем сложность на основе ID
+                var enemyTeamForDifficulty = node.EnemyTeamIds.Select(id => _allEnemyCards[id]).ToList();
+                double difficulty = (enemyTeamForDifficulty.Sum(c => c.Power) - enemyTeamForDifficulty.Count) / (double)enemyTeamForDifficulty.Count;
+
+                if (difficulty >= 8 && currentStrongNodes < maxStrongNodes)
+                {
+                    node.BattleDifficulty = BattleDifficulty.Strong;
+                    currentStrongNodes++;
+                }
+                else if (difficulty >= 5 && currentMediumNodes < maxMediumNodes)
+                {
+                    node.BattleDifficulty = BattleDifficulty.Medium;
+                    currentMediumNodes++;
+                }
+                else
+                {
+                    node.BattleDifficulty = BattleDifficulty.Weak;
+                }
+            }
+        }
+
+        private List<int> GenerateEnemyTeamIds()
+        {
+            int teamSize = _random.Next(1, 6); // от 1 до 5 врагов
+            var enemyTeamIds = new List<int>();
+            int cardCount = _allEnemyCards.Count;
+
+            for (int i = 0; i < teamSize; i++)
+            {
+                // Получаем случайный индекс и добавляем его в список
+                int randomIndex = _random.Next(cardCount);
+                enemyTeamIds.Add(randomIndex);
+            }
+            return enemyTeamIds;
         }
 
         // --- Вспомогательные методы ---
