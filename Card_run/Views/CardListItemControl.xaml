@@ -10,12 +10,16 @@
             MouseLeftButtonUp="Card_MouseLeftButtonUp" Cursor="Hand">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <!-- Увеличим высоту для имени, чтобы было место для двух строк -->
+                <RowDefinition Height="Auto" MinHeight="35"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="CardName" Grid.Row="0" Text="{Binding Name}" FontWeight="Bold" TextAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="14" Margin="2"/>
+            <!-- Viewbox для автоматического масштабирования имени карты -->
+            <Viewbox Grid.Row="0" Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+                <TextBlock x:Name="CardName" Text="{Binding Name}" FontWeight="Bold" TextAlignment="Center" TextWrapping="Wrap" FontSize="14"/>
+            </Viewbox>
 
             <Image x:Name="CardImage" Grid.Row="1" Stretch="UniformToFill" Margin="5" Source="{Binding ImagePath}"/>
 

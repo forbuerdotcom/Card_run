@@ -1,5 +1,4 @@
-﻿// Путь: Models/GraphGenerator.cs
-using Card_run.BattleModels;
+﻿using Card_run.BattleModels;
 using System.Collections.Generic;
 using System.Linq;
 using static Card_run.Models.Node;
@@ -36,7 +35,7 @@ namespace Card_run.Models
             return graph;
         }
 
-        // НОВЫЙ МЕТОД: Проверяет, есть ли путь от игрока к финишу, минуя охотника и магазин
+        //Проверяет, есть ли путь от игрока к финишу, минуя охотника и магазин
         private bool IsGraphValid(Graph graph, Node playerStart, Node hunterStart, Node finish, Node shop)
         {
             var obstacles = new HashSet<int>();
@@ -130,9 +129,7 @@ namespace Card_run.Models
 
             if (!availableNodesForBattle.Any()) return;
 
-            int maxStrongNodes = 2;
             int currentStrongNodes = 0;
-            int maxMediumNodes = 10;
             int currentMediumNodes = 0;
 
             foreach (var node in availableNodesForBattle)
@@ -144,14 +141,14 @@ namespace Card_run.Models
 
                 // Рассчитываем сложность на основе ID
                 var enemyTeamForDifficulty = node.EnemyTeamIds.Select(id => _allEnemyCards[id]).ToList();
-                double difficulty = (enemyTeamForDifficulty.Sum(c => c.Power) * (1 + (enemyTeamForDifficulty.Count / 10))) / (double)enemyTeamForDifficulty.Count;
+                double difficulty = (enemyTeamForDifficulty.Sum(c => c.Power) * (enemyTeamForDifficulty.Count));
 
-                if (difficulty >= 8 && currentStrongNodes < maxStrongNodes)
+                if (difficulty >= 167)
                 {
                     node.BattleDifficulty = BattleDifficulty.Strong;
                     currentStrongNodes++;
                 }
-                else if (difficulty >= 5 && currentMediumNodes < maxMediumNodes)
+                else if (difficulty >= 84)
                 {
                     node.BattleDifficulty = BattleDifficulty.Medium;
                     currentMediumNodes++;
