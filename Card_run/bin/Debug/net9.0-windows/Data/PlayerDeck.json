@@ -1,0 +1,157 @@
+[
+  {
+    "CurrentHP": 30,
+    "Shield": 5,
+    "ShieldValue": 7,
+    "HealValue": 0,
+    "Status": "Alive",
+    "Name": "\u0413\u043E\u043B\u0435\u043C",
+    "MaxHP": 30,
+    "Speed": 50,
+    "Defence": 4,
+    "DefenceTypes": [
+      "Physical",
+      "Fire",
+      "Water",
+      "Air"
+    ],
+    "DefenceWeaknesses": [
+      "Magical",
+      "Light",
+      "Dark"
+    ],
+    "AD": 15,
+    "AttackType": "Physical",
+    "Strength": 1,
+    "DefenceMove": "Shield",
+    "PerkName": null,
+    "Type": "Cautious",
+    "Power": 4,
+    "ImagePath": "images/golem.png",
+    "TimeToNextTurn": 0
+  },
+  {
+    "CurrentHP": 30,
+    "Shield": 5,
+    "ShieldValue": 7,
+    "HealValue": 0,
+    "Status": "Alive",
+    "Name": "\u0413\u043E\u043B\u0435\u043C",
+    "MaxHP": 30,
+    "Speed": 50,
+    "Defence": 4,
+    "DefenceTypes": [
+      "Physical",
+      "Fire",
+      "Water",
+      "Air"
+    ],
+    "DefenceWeaknesses": [
+      "Magical",
+      "Light",
+      "Dark"
+    ],
+    "AD": 15,
+    "AttackType": "Physical",
+    "Strength": 1,
+    "DefenceMove": "Shield",
+    "PerkName": null,
+    "Type": "Cautious",
+    "Power": 4,
+    "ImagePath": "images/golem.png",
+    "TimeToNextTurn": 0
+  },
+  {
+    "CurrentHP": 30,
+    "Shield": 5,
+    "ShieldValue": 7,
+    "HealValue": 0,
+    "Status": "Alive",
+    "Name": "\u0413\u043E\u043B\u0435\u043C",
+    "MaxHP": 30,
+    "Speed": 50,
+    "Defence": 4,
+    "DefenceTypes": [
+      "Physical",
+      "Fire",
+      "Water",
+      "Air"
+    ],
+    "DefenceWeaknesses": [
+      "Magical",
+      "Light",
+      "Dark"
+    ],
+    "AD": 15,
+    "AttackType": "Physical",
+    "Strength": 1,
+    "DefenceMove": "Shield",
+    "PerkName": null,
+    "Type": "Cautious",
+    "Power": 4,
+    "ImagePath": "images/golem.png",
+    "TimeToNextTurn": 0
+  },
+  {
+    "CurrentHP": 30,
+    "Shield": 5,
+    "ShieldValue": 7,
+    "HealValue": 0,
+    "Status": "Alive",
+    "Name": "\u0413\u043E\u043B\u0435\u043C",
+    "MaxHP": 30,
+    "Speed": 50,
+    "Defence": 4,
+    "DefenceTypes": [
+      "Physical",
+      "Fire",
+      "Water",
+      "Air"
+    ],
+    "DefenceWeaknesses": [
+      "Magical",
+      "Light",
+      "Dark"
+    ],
+    "AD": 15,
+    "AttackType": "Physical",
+    "Strength": 1,
+    "DefenceMove": "Shield",
+    "PerkName": null,
+    "Type": "Cautious",
+    "Power": 4,
+    "ImagePath": "images/golem.png",
+    "TimeToNextTurn": 0
+  },
+  {
+    "CurrentHP": 30,
+    "Shield": 5,
+    "ShieldValue": 7,
+    "HealValue": 0,
+    "Status": "Alive",
+    "Name": "\u0413\u043E\u043B\u0435\u043C",
+    "MaxHP": 30,
+    "Speed": 50,
+    "Defence": 4,
+    "DefenceTypes": [
+      "Physical",
+      "Fire",
+      "Water",
+      "Air"
+    ],
+    "DefenceWeaknesses": [
+      "Magical",
+      "Light",
+      "Dark"
+    ],
+    "AD": 15,
+    "AttackType": "Physical",
+    "Strength": 1,
+    "DefenceMove": "Shield",
+    "PerkName": null,
+    "Type": "Cautious",
+    "Power": 4,
+    "ImagePath": "images/golem.png",
+    "TimeToNextTurn": 0
+  }
+]

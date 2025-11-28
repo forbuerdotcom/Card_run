@@ -30,11 +30,13 @@ namespace Card_run.Views
             InitializeComponent();
         }
 
-        public void StartBattle(List<Card> enemyTeam, List<Card> playerTeam)
+        public void StartBattle(List<Card> enemyTeam, List<Card> playerDeckTemplate)
         {
             this.Focus();
             _enemyTeam = enemyTeam;
-            _playerTeam = playerTeam;
+
+            _playerTeam = playerDeckTemplate.Select(cardTemplate => new Card(cardTemplate)).ToList();
+
             _allBattleCards = new List<Card>();
             _allBattleCards.AddRange(_playerTeam);
             _allBattleCards.AddRange(_enemyTeam);
