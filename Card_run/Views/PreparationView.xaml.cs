@@ -82,9 +82,6 @@ namespace Card_run.Views
             InfoAD.Text = $"Атака: {hoveredCard.AD}";
             InfoSpeed.Text = $"Скорость: {hoveredCard.Speed}";
             InfoDefence.Text = $"Защита: {hoveredCard.Defence}";
-<<<<<<< Updated upstream
-            InfoPerk.Text = hoveredCard.PerkName;
-=======
             string attackType = string.Join(", ", hoveredCard.AttackType);
             string defenceTypes = string.Join(", ", hoveredCard.DefenceTypes);
             string weaknesses = string.Join(", ", hoveredCard.DefenceWeaknesses);
@@ -93,7 +90,6 @@ namespace Card_run.Views
             InfoAttackType.Text = $"Тип атаки: {attackType}";
             InfoDefenceType.Text = $"Тип защиты: {defenceTypes}";
             InfoDefenceWeaknesses.Text = $"Уязвим к: {weaknesses}";
->>>>>>> Stashed changes
         }
 
         private void OnCardHoverEnded()

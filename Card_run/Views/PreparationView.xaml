@@ -65,22 +65,10 @@
                 <TextBlock x:Name="InfoType" FontSize="14" Foreground="Cyan"/>
                 <TextBlock x:Name="InfoPower" FontSize="14" Foreground="Yellow"/>
                 <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Gray" StrokeThickness="1" Margin="0,5"/>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                 <TextBlock x:Name="InfoDefenceMove" FontSize="14" Foreground="Magenta"/>
                 <TextBlock x:Name="InfoAttackType" FontSize="14" Foreground="RosyBrown"/>
                 <TextBlock x:Name="InfoDefenceType" FontSize="14" Foreground="White"/>
                 <TextBlock x:Name="InfoDefenceWeaknesses" FontSize="14" Foreground="Moccasin"/>
->>>>>>> Stashed changes
                 <TextBlock x:Name="InfoHP" FontSize="14" Foreground="Lime"/>
                 <TextBlock x:Name="InfoAD" FontSize="14" Foreground="Red"/>
                 <TextBlock x:Name="InfoSpeed" FontSize="14" Foreground="LightBlue"/>
