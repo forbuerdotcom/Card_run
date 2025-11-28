@@ -54,6 +54,8 @@ namespace Card_run
         private void OnStartGameRequested(List<Card> playerDeck)
         {
             _playerDeck = playerDeck;
+            // Сбрасываем улучшения при начале новой игры
+            _shopView.ResetUpgrades();
             var generator = new GraphGenerator();
             var graph = generator.Generate();
             _gameState = new GameState(graph);
@@ -81,9 +83,25 @@ namespace Card_run
                 }
                 _gameState.PlayerPosition.IsPlayerCurrentPosition = true;
 
-                // ---  Проверка на усиление врагов ---
+                // ---  Проверка на боевой узел ---
                 if (destinationNode.IsBattleNode)
                 {
+                    // Если узел уже очищен и не заражен охотником, пропускаем бой
+                    if (destinationNode.IsCleared && !_gameState.HunterControlledNodes.Contains(destinationNode.Id))
+                    {
+                        // Узел уже очищен, просто продолжаем
+                        ProcessHunterExpansion();
+                        _gameMapView.SetGameState(_gameState);
+                        CheckGameEnd();
+                        return;
+                    }
+                    
+                    // Если узел был очищен, но охотник его заразил, восстанавливаем врагов
+                    if (destinationNode.IsCleared && _gameState.HunterControlledNodes.Contains(destinationNode.Id))
+                    {
+                        destinationNode.IsCleared = false; // Восстанавливаем врагов
+                    }
+                    
                     // Формируем команду врагов
                     var allEnemyCards = DataLoader.GetAllCards();
                     _currentEnemyTeam = destinationNode.EnemyTeamIds
@@ -100,8 +118,9 @@ namespace Card_run
                         }
                     }
 
-                    // Запускаем бой
-                    _battleView.StartBattle(_currentEnemyTeam, _playerDeck);
+                    // Запускаем бой с улучшенными картами игрока
+                    var upgradedPlayerDeck = _shopView.GetUpgradedDeck();
+                    _battleView.StartBattle(_currentEnemyTeam, upgradedPlayerDeck);
                     MainContentControl.Content = _battleView;
                     return;
                 }
@@ -109,6 +128,7 @@ namespace Card_run
                 // Если это не бой, продолжаем обычную логику
                 if (destinationNode.IsShop)
                 {
+                    _shopView.SetGameState(_gameState);
                     MainContentControl.Content = _shopView;
                 }
                 else
@@ -122,6 +142,8 @@ namespace Card_run
 
         private void OnShopExit()
         {
+            ProcessHunterExpansion();
+            _gameMapView.SetGameState(_gameState);
             ShowMap();
             CheckGameEnd();
         }
@@ -157,6 +179,12 @@ namespace Card_run
                     {
                         _gameState.StrongestEnemyDefeated = enemy;
                     }
+                }
+                
+                // Помечаем текущий боевой узел как очищенный
+                if (_gameState.PlayerPosition.IsBattleNode)
+                {
+                    _gameState.PlayerPosition.IsCleared = true;
                 }
             }
             else
@@ -194,10 +222,30 @@ namespace Card_run
         {
             if (_gameState.PlayerPosition.IsFinish)
             {
-                MessageBox.Show("Победа! Ты добрался до финиша!");
-                // ИЗМЕНЕНО: Возвращаемся в главное меню, а не начинаем новую игру
-                MainContentControl.Content = _mainMenu;
+                // Показываем экран победы со статистикой
+                ShowVictoryScreen();
             }
+        }
+
+        private void ShowVictoryScreen()
+        {
+            // Рассчитываем итоговый счет. Простая формула: (узлы * 10) + (враги * 5) + (золото)
+            int finalScore = (_gameState.NodesVisited * 10) + (_gameState.EnemiesDefeated * 5) + _gameState.GoldEarned;
+
+            string strongestEnemyName = _gameState.StrongestEnemyDefeated?.Name ?? "Нет";
+
+            var victoryView = new GameOverView(
+                finalScore,
+                _gameState.NodesVisited,
+                _gameState.EnemiesDefeated,
+                _gameState.GoldEarned,
+                strongestEnemyName
+            );
+            
+            // Меняем заголовок на "ПОБЕДА"
+            victoryView.SetTitle("ПОБЕДА");
+
+            MainContentControl.Content = victoryView;
         }
 
         private void ShowMap()

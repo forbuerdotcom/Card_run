@@ -13,7 +13,8 @@
         </Grid.RowDefinitions>
 
         <!-- Заголовок -->
-        <TextBlock Grid.Row="0" 
+        <TextBlock x:Name="TitleTextBlock"
+                   Grid.Row="0" 
                    Text="ПОРАЖЕНИЕ" 
                    FontSize="120" 
                    FontWeight="Bold" 

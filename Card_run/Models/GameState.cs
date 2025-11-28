@@ -64,6 +64,11 @@ namespace Card_run.Models
         public void ExpandHunterColony(Node newNode)
         {
             HunterControlledNodes.Add(newNode.Id);
+            // Если узел был очищен, но охотник его заразил, восстанавливаем врагов
+            if (newNode.IsCleared && newNode.IsBattleNode)
+            {
+                newNode.IsCleared = false;
+            }
         }
 
         public List<Node> GetAvailableMoves()
