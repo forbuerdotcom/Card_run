@@ -22,6 +22,10 @@
 
     <ItemGroup>
       <None Remove="Assets\MainMenu.png" />
+      <None Remove="Data\cards.json" />
+      <EmbeddedResource Include="Data\cards.json" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+      <PackageReference Include="System.Text.Json" Version="10.0.0" />
       <Resource Include="Assets\MainMenu.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>

@@ -1,10 +1,11 @@
-﻿// Путь: Views/GameMapView.xaml.cs
+﻿using System.Windows;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Card_run.Models;
+using Card_run.BattleModels;
 
 namespace Card_run.Views
 {
@@ -64,23 +65,106 @@ namespace Card_run.Views
             // Рисуем вершины
             foreach (var node in graph.Nodes)
             {
-                Ellipse ellipse = new Ellipse { Width = 30, Height = 30, Stroke = Brushes.Black, StrokeThickness = 2 };
-                
-                // ИЗМЕНЕНИЕ: Обновлена логика окрашивания, стартовая точка теперь видна
-                if (node.IsPlayerCurrentPosition) ellipse.Fill = Brushes.HotPink;
-                else if (node.IsPlayerStart) ellipse.Fill = Brushes.LightGray; // НОВОЕ: Стартовая точка
-                else if (node.IsShop) ellipse.Fill = Brushes.Yellow;
-                else if (node.IsFinish) ellipse.Fill = Brushes.Green;
-                else if (_gameState.HunterControlledNodes.Contains(node.Id) && node.IsVisitedByPlayerHunter)
-                    ellipse.Fill = new SolidColorBrush(Color.FromRgb(200, 100, 200));
-                else if (_gameState.HunterControlledNodes.Contains(node.Id))
-                    ellipse.Fill = new SolidColorBrush(Color.FromRgb(128, 0, 128));
-                else if (node.IsVisitedByPlayer) ellipse.Fill = Brushes.LightGray;
-                else ellipse.Fill = Brushes.White;
-                
-                Canvas.SetLeft(ellipse, node.X * _scale + _offsetX - ellipse.Width / 2);
-                Canvas.SetTop(ellipse, node.Y * _scale + _offsetY - ellipse.Height / 2);
+                bool isHunterControlled = _gameState.HunterControlledNodes.Contains(node.Id);
 
+                // Определяем основной цвет узла
+                Brush nodeBrush = Brushes.White;
+                if (node.IsPlayerCurrentPosition) nodeBrush = Brushes.HotPink;
+                else if (node.IsPlayerStart) nodeBrush = Brushes.LightGray;
+                else if (node.IsShop) nodeBrush = Brushes.Yellow;
+                else if (node.IsFinish) nodeBrush = Brushes.Green;
+                else if (node.IsBattleNode)
+                {
+                    if (node.BattleDifficulty == BattleDifficulty.Weak) nodeBrush = Brushes.LimeGreen;
+                    else if (node.BattleDifficulty == BattleDifficulty.Medium) nodeBrush = Brushes.IndianRed;
+                    else if (node.BattleDifficulty == BattleDifficulty.Strong) nodeBrush = Brushes.Black;
+                }
+                else if (isHunterControlled && node.IsVisitedByPlayerHunter)
+                    nodeBrush = new SolidColorBrush(Color.FromRgb(200, 100, 200));
+                else if (isHunterControlled)
+                    nodeBrush = new SolidColorBrush(Color.FromRgb(128, 0, 128));
+                else if (node.IsVisitedByPlayer) nodeBrush = Brushes.LightGray;
+
+                // Создаем контейнер для всех частей узла
+                var mainContainer = new Grid
+                {
+                    Width = 30,
+                    Height = 30
+                };
+
+                // Если узел захвачен охотником, создаем составную фигуру
+                if (isHunterControlled)
+                {
+                    // Создаем полукруг для основной части узла (левая половина)
+                    var leftHalfPath = new Path { Fill = nodeBrush };
+                    var leftHalfGeometry = new PathGeometry();
+                    var leftHalfFigure = new PathFigure
+                    {
+                        StartPoint = new Point(15, 0),
+                        IsClosed = true
+                    };
+                    leftHalfFigure.Segments.Add(new ArcSegment
+                    {
+                        Point = new Point(15, 30),
+                        Size = new Size(15, 15),
+                        SweepDirection = SweepDirection.Clockwise
+                    });
+                    // ИСПРАВЛЕНИЕ 1: Добавлен параметр 'true'
+                    leftHalfFigure.Segments.Add(new LineSegment(new Point(15, 0), true));
+                    leftHalfGeometry.Figures.Add(leftHalfFigure);
+                    leftHalfPath.Data = leftHalfGeometry;
+
+                    // Создаем полукруг для части охотника (правая половина)
+                    var rightHalfPath = new Path { Fill = new SolidColorBrush(Color.FromRgb(128, 0, 128)) };
+                    var rightHalfGeometry = new PathGeometry();
+                    // ИСПРАВЛЕНИЕ 2: Обход проблемы с CounterClockwise
+                    var rightHalfFigure = new PathFigure
+                    {
+                        StartPoint = new Point(15, 30), // Начинаем с нижнего центра
+                        IsClosed = true
+                    };
+                    rightHalfFigure.Segments.Add(new ArcSegment
+                    {
+                        Point = new Point(15, 0), // Идем к верхнему центру
+                        Size = new Size(15, 15),
+                        SweepDirection = SweepDirection.Clockwise // Используем только Clockwise
+                    });
+                    // ИСПРАВЛЕНИЕ 1: Добавлен параметр 'true'
+                    rightHalfFigure.Segments.Add(new LineSegment(new Point(15, 30), true));
+                    rightHalfGeometry.Figures.Add(rightHalfFigure);
+                    rightHalfPath.Data = rightHalfGeometry;
+
+                    mainContainer.Children.Add(leftHalfPath);
+                    mainContainer.Children.Add(rightHalfPath);
+                }
+                else
+                {
+                    // Для незахваченных узлов просто создаем круг
+                    var fullCircle = new Ellipse
+                    {
+                        Width = 30,
+                        Height = 30,
+                        Fill = nodeBrush
+                    };
+                    mainContainer.Children.Add(fullCircle);
+                }
+
+                // Добавляем рамку поверх всего
+                var ellipse = new Ellipse
+                {
+                    Width = 30,
+                    Height = 30,
+                    Stroke = Brushes.Black,
+                    StrokeThickness = 2,
+                    Fill = Brushes.Transparent // Прозрачная заливка, чтобы были видны фигуры под ней
+                };
+                mainContainer.Children.Add(ellipse);
+
+                // Размещаем главный контейнер на канвасе
+                Canvas.SetLeft(mainContainer, node.X * _scale + _offsetX - ellipse.Width / 2);
+                Canvas.SetTop(mainContainer, node.Y * _scale + _offsetY - ellipse.Height / 2);
+
+                // Логика кликов (привязана к эллипсу рамки)
                 bool isNeighbor = graph.Edges.Contains((_gameState.PlayerPosition.Id, node.Id)) ||
                                   graph.Edges.Contains((node.Id, _gameState.PlayerPosition.Id));
 
@@ -94,7 +178,7 @@ namespace Card_run.Views
                     ellipse.Cursor = Cursors.Arrow;
                 }
 
-                GraphCanvas.Children.Add(ellipse);
+                GraphCanvas.Children.Add(mainContainer);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿// Путь: Models/GameState.cs
+using Card_run.BattleModels;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,6 +10,10 @@ namespace Card_run.Models
         public Graph CurrentGraph { get; private set; }
         public Node PlayerPosition { get; private set; }
         public int PlayerMoveCount { get; private set; } = 0;
+        public int NodesVisited { get; set; } = 0;
+        public int EnemiesDefeated { get; set; } = 0;
+        public int GoldEarned { get; set; } = 0;
+        public Card StrongestEnemyDefeated { get; set; } = null;
 
         // Колония "охотника" - множество зараженных клеток
         public HashSet<int> HunterControlledNodes { get; }
@@ -19,7 +24,7 @@ namespace Card_run.Models
             // Размещаем игрока на стартовой точке
             PlayerPosition = CurrentGraph.Nodes.First(n => n.IsPlayerStart);
             
-            // ИСПРАВЛЕНИЕ: Устанавливаем флаг, чтобы стартовая точка сразу окрасилась в цвет игрока
+            // Устанавливаем флаг, чтобы стартовая точка сразу окрасилась в цвет игрока
             if (PlayerPosition != null)
             {
                 PlayerPosition.IsPlayerCurrentPosition = true;
