@@ -5,6 +5,7 @@
     {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\models\\graphgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\models\\graphgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,6 +56,10 @@
       "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
 >>>>>>> Stashed changes
+=======
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -85,6 +90,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
               "Title": "GraphGenerator.cs",
@@ -220,6 +226,16 @@
               "ViewState": "AgIAAFQAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T18:47:29.535Z",
+=======
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Card_run\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Card_run\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T23:12:04.658Z",
+>>>>>>> Stashed changes
 =======
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\MainWindow.xaml.cs",

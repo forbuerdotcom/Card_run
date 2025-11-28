@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿#pragma checksum "..\..\..\..\Views\PreparationView.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "E4CD130DEB2D97AA3B8EC5C7382058A81142E91B"
+=======
+﻿#pragma checksum "..\..\..\..\Views\PreparationView.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "5046F6FEEC169C81335D157475D17E41BB732864"
+>>>>>>> Stashed changes
 =======
 ﻿#pragma checksum "..\..\..\..\Views\PreparationView.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "5046F6FEEC169C81335D157475D17E41BB732864"
 >>>>>>> Stashed changes
@@ -153,6 +157,7 @@ namespace Card_run.Views {
         #line 69 "..\..\..\..\Views\PreparationView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock InfoDefenceType;
+<<<<<<< Updated upstream
         
         #line default
         #line hidden
@@ -173,6 +178,8 @@ namespace Card_run.Views {
         internal System.Windows.Controls.TextBlock InfoHP;
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         
         #line default
         #line hidden
@@ -180,13 +187,21 @@ namespace Card_run.Views {
         
         #line 70 "..\..\..\..\Views\PreparationView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBlock InfoHP;
+        internal System.Windows.Controls.TextBlock InfoDefenceWeaknesses;
         
         #line default
         #line hidden
         
         
         #line 71 "..\..\..\..\Views\PreparationView.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBlock InfoHP;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 74 "..\..\..\..\Views\PreparationView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock InfoAD;
         
@@ -212,7 +227,11 @@ namespace Card_run.Views {
         
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 73 "..\..\..\..\Views\PreparationView.xaml"
+=======
+        #line 76 "..\..\..\..\Views\PreparationView.xaml"
+>>>>>>> Stashed changes
 =======
         #line 76 "..\..\..\..\Views\PreparationView.xaml"
 >>>>>>> Stashed changes
@@ -228,7 +247,11 @@ namespace Card_run.Views {
         
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 79 "..\..\..\..\Views\PreparationView.xaml"
+=======
+        #line 82 "..\..\..\..\Views\PreparationView.xaml"
+>>>>>>> Stashed changes
 =======
         #line 82 "..\..\..\..\Views\PreparationView.xaml"
 >>>>>>> Stashed changes
@@ -244,7 +267,11 @@ namespace Card_run.Views {
         
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 84 "..\..\..\..\Views\PreparationView.xaml"
+=======
+        #line 87 "..\..\..\..\Views\PreparationView.xaml"
+>>>>>>> Stashed changes
 =======
         #line 87 "..\..\..\..\Views\PreparationView.xaml"
 >>>>>>> Stashed changes
@@ -260,7 +287,11 @@ namespace Card_run.Views {
         
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 85 "..\..\..\..\Views\PreparationView.xaml"
+=======
+        #line 88 "..\..\..\..\Views\PreparationView.xaml"
+>>>>>>> Stashed changes
 =======
         #line 88 "..\..\..\..\Views\PreparationView.xaml"
 >>>>>>> Stashed changes
@@ -334,6 +365,7 @@ namespace Card_run.Views {
             this.InfoPower = ((System.Windows.Controls.TextBlock)(target));
             return;
             case 11:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             this.InfoHP = ((System.Windows.Controls.TextBlock)(target));
@@ -427,6 +459,41 @@ namespace Card_run.Views {
             
             #line 87 "..\..\..\..\Views\PreparationView.xaml"
 >>>>>>> Stashed changes
+=======
+            this.InfoDefenceMove = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 12:
+            this.InfoAttackType = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 13:
+            this.InfoDefenceType = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 14:
+            this.InfoDefenceWeaknesses = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 15:
+            this.InfoHP = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 16:
+            this.InfoAD = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 17:
+            this.InfoSpeed = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 18:
+            this.InfoDefence = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 19:
+            this.InfoPerk = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 20:
+            this.AllCardsPanel = ((System.Windows.Controls.WrapPanel)(target));
+            return;
+            case 21:
+            this.StartGameButton = ((System.Windows.Controls.Button)(target));
+            
+            #line 87 "..\..\..\..\Views\PreparationView.xaml"
+>>>>>>> Stashed changes
             this.StartGameButton.Click += new System.Windows.RoutedEventHandler(this.StartGame_Click);
             
             #line default
@@ -434,10 +501,17 @@ namespace Card_run.Views {
             return;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 18:
             this.ClearDeckButton = ((System.Windows.Controls.Button)(target));
             
             #line 85 "..\..\..\..\Views\PreparationView.xaml"
+=======
+            case 22:
+            this.ClearDeckButton = ((System.Windows.Controls.Button)(target));
+            
+            #line 88 "..\..\..\..\Views\PreparationView.xaml"
+>>>>>>> Stashed changes
 =======
             case 22:
             this.ClearDeckButton = ((System.Windows.Controls.Button)(target));
@@ -457,9 +531,15 @@ namespace Card_run.Views {
             return;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 19:
             
             #line 86 "..\..\..\..\Views\PreparationView.xaml"
+=======
+            case 23:
+            
+            #line 89 "..\..\..\..\Views\PreparationView.xaml"
+>>>>>>> Stashed changes
 =======
             case 23:
             
