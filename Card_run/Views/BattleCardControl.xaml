@@ -18,7 +18,7 @@
 
             <TextBlock x:Name="CardName" Grid.Row="0" Text="{Binding Name}" FontWeight="Bold" TextAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="16"/>
 
-            <Image x:Name="CardImage" Grid.Row="1" Stretch="UniformToFill" Margin="5"/>
+            <Image x:Name="CardImage" Grid.Row="1" Stretch="UniformToFill" Margin="5" Source="{Binding ImagePath}"/>
 
             <!-- ИЗМЕНЕННАЯ ЧАСТЬ: Grid для характеристик -->
             <Grid Grid.Row="2" Margin="5">
@@ -45,7 +45,7 @@
 
                 <!-- AD -->
                 <Grid Grid.Column="2">
-                    <Polygon Points="0,30,20,0 40,30" Fill="Red" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.688,0.493"/>
+                    <Polygon Points="0,0,45,0,22.5,30" Fill="Red" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.688,0.493"/>
                     <TextBlock Text="{Binding AD}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
                 </Grid>
             </Grid>

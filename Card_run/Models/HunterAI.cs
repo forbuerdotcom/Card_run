@@ -9,8 +9,8 @@ namespace Card_run.Models
     {
         public Node CalculateNextExpansion(GameState state)
         {
-            // Колония начинает расширяться после 2-го хода игрока
-            if (state.PlayerMoveCount < 2) return null;
+            // Колония начинает расширяться после 3-го хода игрока
+            if (state.PlayerMoveCount < 3) return null;
 
             var finishNode = state.CurrentGraph.Nodes.FirstOrDefault(n => n.IsFinish);
             if (finishNode == null) return null;

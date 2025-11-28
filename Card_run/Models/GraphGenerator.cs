@@ -144,7 +144,7 @@ namespace Card_run.Models
 
                 // Рассчитываем сложность на основе ID
                 var enemyTeamForDifficulty = node.EnemyTeamIds.Select(id => _allEnemyCards[id]).ToList();
-                double difficulty = (enemyTeamForDifficulty.Sum(c => c.Power) - enemyTeamForDifficulty.Count) / (double)enemyTeamForDifficulty.Count;
+                double difficulty = (enemyTeamForDifficulty.Sum(c => c.Power) * (1 + (enemyTeamForDifficulty.Count / 10))) / (double)enemyTeamForDifficulty.Count;
 
                 if (difficulty >= 8 && currentStrongNodes < maxStrongNodes)
                 {
