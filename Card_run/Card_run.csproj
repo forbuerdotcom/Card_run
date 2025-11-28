@@ -20,8 +20,22 @@
       <None Remove="Assets\card.png" />
       <None Remove="Assets\cards_collection.png" />
       <None Remove="Assets\card_outline.png" />
+      <None Remove="Assets\crystal_golem.png" />
+      <None Remove="Assets\dark_knight.png" />
+      <None Remove="Assets\dwarf_mechanic.png" />
+      <None Remove="Assets\forest_druid.png" />
+      <None Remove="Assets\forest_troll.png" />
+      <None Remove="Assets\ghost_archer.png" />
+      <None Remove="Assets\golem.png" />
+      <None Remove="Assets\herbal_witch.png" />
+      <None Remove="Assets\hound.png" />
+      <None Remove="Assets\light_priest.png" />
+      <None Remove="Assets\mage_of_fire.png" />
       <None Remove="Assets\MainMenu.png" />
+      <None Remove="Assets\storm_caster.png" />
+      <None Remove="Assets\storm_dragon.png" />
       <None Remove="Assets\sword.png" />
+      <None Remove="Assets\water_elemental.png" />
       <None Remove="Data\cards.json" />
       <EmbeddedResource Include="Data\cards.json" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
@@ -35,10 +49,52 @@
       <Resource Include="Assets\card_outline.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
+      <Resource Include="Assets\crystal_golem.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\dark_knight.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\dwarf_mechanic.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\forest_druid.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\forest_troll.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\ghost_archer.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\golem.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\herbal_witch.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\hound.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\light_priest.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\mage_of_fire.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Assets\MainMenu.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
+      <Resource Include="Assets\storm_caster.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\storm_dragon.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Assets\sword.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Assets\water_elemental.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>
