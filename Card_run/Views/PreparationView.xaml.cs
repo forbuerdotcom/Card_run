@@ -85,6 +85,8 @@ namespace Card_run.Views
             string attackType = string.Join(", ", hoveredCard.AttackType);
             string defenceTypes = string.Join(", ", hoveredCard.DefenceTypes);
             string weaknesses = string.Join(", ", hoveredCard.DefenceWeaknesses);
+            string DefenceMove = string.Join(", ", hoveredCard.DefenceMove);
+            InfoDefenceMove.Text = $"Защитное действие: {DefenceMove}";
             InfoAttackType.Text = $"Тип атаки: {attackType}";
             InfoDefenceType.Text = $"Тип защиты: {defenceTypes}";
             InfoDefenceWeaknesses.Text = $"Уязвим к: {weaknesses}";

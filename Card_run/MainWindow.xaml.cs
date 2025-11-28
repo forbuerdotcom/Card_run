@@ -114,7 +114,6 @@ namespace Card_run
                         foreach (var enemyCard in _currentEnemyTeam)
                         {
                             enemyCard.Strength += 1;
-                            MessageBox.Show($"Охотник усилил врагов в этой зоне! Сила '{enemyCard.Name}' теперь равна {enemyCard.Strength}.", "Усиление врагов", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                     }
 

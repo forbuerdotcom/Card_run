@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\preparationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\preparationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\battlecardcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\battlecardcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\cardlistitemcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\cardlistitemcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\battlemodels\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\battlemodels\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\data\\playerdeck.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\data\\playerdeck.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\models\\hunterai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\models\\hunterai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\preparationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\preparationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\battlemodels\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\battlemodels\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\data\\cards.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\data\\cards.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\battlemodels\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\battlemodels\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\preparationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\preparationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\battleview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\battleview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\models\\graphgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\models\\graphgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,93 +62,97 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BattleCardControl.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\BattleCardControl.xaml",
+              "RelativeDocumentMoniker": "Card_run\\Views\\BattleCardControl.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\BattleCardControl.xaml",
+              "RelativeToolTip": "Card_run\\Views\\BattleCardControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-28T23:20:43.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CardListItemControl.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\CardListItemControl.xaml",
+              "RelativeDocumentMoniker": "Card_run\\Views\\CardListItemControl.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\CardListItemControl.xaml",
+              "RelativeToolTip": "Card_run\\Views\\CardListItemControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-28T23:20:17.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeckManager.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\BattleModels\\DeckManager.cs",
+              "RelativeDocumentMoniker": "Card_run\\BattleModels\\DeckManager.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\BattleModels\\DeckManager.cs",
+              "RelativeToolTip": "Card_run\\BattleModels\\DeckManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:10:58.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayerDeck.json",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Data\\PlayerDeck.json",
+              "RelativeDocumentMoniker": "Card_run\\Data\\PlayerDeck.json",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Data\\PlayerDeck.json",
+              "RelativeToolTip": "Card_run\\Data\\PlayerDeck.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-28T14:09:54.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HunterAI.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Models\\HunterAI.cs",
+              "RelativeDocumentMoniker": "Card_run\\Models\\HunterAI.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Models\\HunterAI.cs",
+              "RelativeToolTip": "Card_run\\Models\\HunterAI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:07:17.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "PreparationView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml.cs",
               "RelativeDocumentMoniker": "Card_run\\Views\\PreparationView.xaml.cs",
               "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml.cs",
               "RelativeToolTip": "Card_run\\Views\\PreparationView.xaml.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAxwFkAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAFMAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T22:35:55.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PreparationView.xaml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml",
-              "RelativeDocumentMoniker": "Card_run\\Views\\PreparationView.xaml",
-              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml*",
-              "RelativeToolTip": "Card_run\\Views\\PreparationView.xaml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-28T22:32:06.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Card.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\BattleModels\\Card.cs",
-              "RelativeDocumentMoniker": "Card_run\\BattleModels\\Card.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\BattleModels\\Card.cs",
-              "RelativeToolTip": "Card_run\\BattleModels\\Card.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAxwKEAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T22:11:09.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataLoader.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\BattleModels\\DataLoader.cs",
-              "RelativeDocumentMoniker": "Card_run\\BattleModels\\DataLoader.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\BattleModels\\DataLoader.cs",
-              "RelativeToolTip": "Card_run\\BattleModels\\DataLoader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T21:59:21.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "cards.json",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Data\\cards.json",
-              "RelativeDocumentMoniker": "Card_run\\Data\\cards.json",
-              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Data\\cards.json",
-              "RelativeToolTip": "Card_run\\Data\\cards.json",
-              "ViewState": "AgIAAMUAAAAAAAAAAAAqwM8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-28T21:49:18.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T11:53:12.549Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "GraphGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Models\\GraphGenerator.cs",
-              "RelativeDocumentMoniker": "Card_run\\Models\\GraphGenerator.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Models\\GraphGenerator.cs",
-              "RelativeToolTip": "Card_run\\Models\\GraphGenerator.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAJcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T21:44:04.752Z",
-              "EditorCaption": ""
+              "Title": "PreparationView.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml",
+              "RelativeDocumentMoniker": "Card_run\\Views\\PreparationView.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml",
+              "RelativeToolTip": "Card_run\\Views\\PreparationView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-28T11:52:49.618Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "BattleView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\BattleView.xaml.cs",
               "RelativeDocumentMoniker": "Card_run\\Views\\BattleView.xaml.cs",
               "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\BattleView.xaml.cs",
               "RelativeToolTip": "Card_run\\Views\\BattleView.xaml.cs",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAuwMEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T18:47:29.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T18:47:29.535Z"
             }
           ]
         },

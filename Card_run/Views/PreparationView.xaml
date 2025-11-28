@@ -49,6 +49,7 @@
                 </Border>
             </StackPanel>
 
+            <!-- ... (остальная часть XAML без изменений) ... -->
             <Border Grid.Row="1" BorderBrush="Gold" BorderThickness="2" CornerRadius="5" Background="#FF4A4A4A">
                 <Grid>
                     <TextBlock x:Name="DeckPlaceholder" Text="Ваша колода (кликните на карты ниже, чтобы добавить)" 
@@ -58,12 +59,13 @@
             </Border>
         </Grid>
 
-        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" BorderBrush="Gray" BorderThickness="3" CornerRadius="5" Margin="10" Background="#FF333333">
+        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" BorderBrush="Silver" BorderThickness="3" CornerRadius="5" Margin="10" Background="#FF333333">
             <StackPanel x:Name="CardInfoPanel" Margin="10" Visibility="Collapsed">
                 <TextBlock x:Name="InfoName" FontSize="18" FontWeight="Bold" Foreground="White" TextWrapping="Wrap"/>
                 <TextBlock x:Name="InfoType" FontSize="14" Foreground="Cyan"/>
                 <TextBlock x:Name="InfoPower" FontSize="14" Foreground="Yellow"/>
                 <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Gray" StrokeThickness="1" Margin="0,5"/>
+                <TextBlock x:Name="InfoDefenceMove" FontSize="14" Foreground="Magenta"/>
                 <TextBlock x:Name="InfoAttackType" FontSize="14" Foreground="RosyBrown"/>
                 <TextBlock x:Name="InfoDefenceType" FontSize="14" Foreground="White"/>
                 <TextBlock x:Name="InfoDefenceWeaknesses" FontSize="14" Foreground="Moccasin"/>
