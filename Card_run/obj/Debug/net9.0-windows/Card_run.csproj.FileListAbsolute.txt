@@ -68,3 +68,7 @@ C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-wind
 C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Card_run.csproj.Up2Date
 C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\GameOverView.baml
 C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\GameOverView.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\CardListItemControl.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\PreparationView.baml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\CardListItemControl.g.cs
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\Views\PreparationView.g.cs

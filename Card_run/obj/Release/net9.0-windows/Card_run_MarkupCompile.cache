@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\App.xaml
-7339644234
+9-909097585
 
-17-1609312974
+192073457906
 20131288781
-MainWindow.xaml;Views\BattleCardControl.xaml;Views\BattleView.xaml;Views\GameMapView.xaml;Views\GameOverView.xaml;Views\MainMenu.xaml;Views\ShopView.xaml;
+MainWindow.xaml;Views\BattleCardControl.xaml;Views\BattleView.xaml;Views\CardListItemControl.xaml;Views\GameMapView.xaml;Views\GameOverView.xaml;Views\MainMenu.xaml;Views\PreparationView.xaml;Views\ShopView.xaml;
 
 True
 

@@ -8,5 +8,11 @@
     <Compile Update="Views\GameOverView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\CardListItemControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PreparationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
