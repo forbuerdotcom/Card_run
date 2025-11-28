@@ -66,7 +66,10 @@
                 <TextBlock x:Name="InfoPower" FontSize="14" Foreground="Yellow"/>
                 <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Gray" StrokeThickness="1" Margin="0,5"/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
                 <TextBlock x:Name="InfoDefenceMove" FontSize="14" Foreground="Magenta"/>
                 <TextBlock x:Name="InfoAttackType" FontSize="14" Foreground="RosyBrown"/>
                 <TextBlock x:Name="InfoDefenceType" FontSize="14" Foreground="White"/>
