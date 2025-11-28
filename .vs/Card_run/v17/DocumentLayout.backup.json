@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\battleview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\battleview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\preparationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\preparationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\cardlistitemcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\cardlistitemcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\preparationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\preparationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\cardlistitemcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\cardlistitemcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\views\\battleview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|solutionrelative:card_run\\views\\battleview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}|Card_run\\Card_run.csproj|c:\\users\\\u043D\u0435\u0439\u0442\u0440\u043E\u043D\\documents\\github\\card_run\\card_run\\models\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,19 +58,70 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PreparationView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml.cs",
+              "RelativeDocumentMoniker": "Card_run\\Views\\PreparationView.xaml.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml.cs*",
+              "RelativeToolTip": "Card_run\\Views\\PreparationView.xaml.cs*",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwCkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T11:53:12.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PreparationView.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml",
+              "RelativeDocumentMoniker": "Card_run\\Views\\PreparationView.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\PreparationView.xaml",
+              "RelativeToolTip": "Card_run\\Views\\PreparationView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-28T11:52:49.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CardListItemControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\CardListItemControl.xaml.cs",
+              "RelativeDocumentMoniker": "Card_run\\Views\\CardListItemControl.xaml.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\CardListItemControl.xaml.cs",
+              "RelativeToolTip": "Card_run\\Views\\CardListItemControl.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T11:52:08.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CardListItemControl.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\CardListItemControl.xaml",
+              "RelativeDocumentMoniker": "Card_run\\Views\\CardListItemControl.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\CardListItemControl.xaml",
+              "RelativeToolTip": "Card_run\\Views\\CardListItemControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-28T11:51:26.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Card_run\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\MainWindow.xaml.cs",
               "RelativeToolTip": "Card_run\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALUAAAAAAAAAAAAAAMgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T23:31:11.024Z"
+              "WhenOpened": "2025-11-27T23:31:11.024Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "GameState.cs",
               "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Models\\GameState.cs",
               "RelativeDocumentMoniker": "Card_run\\Models\\GameState.cs",
@@ -66,13 +133,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "BattleView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\BattleView.xaml.cs",
               "RelativeDocumentMoniker": "Card_run\\Views\\BattleView.xaml.cs",
               "ToolTip": "C:\\Users\\\u041D\u0435\u0439\u0442\u0440\u043E\u043D\\Documents\\GitHub\\Card_run\\Card_run\\Views\\BattleView.xaml.cs",
               "RelativeToolTip": "Card_run\\Views\\BattleView.xaml.cs",
-              "ViewState": "AgIAAGoBAAAAAAAAAAAAwBYCAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T18:47:29.535Z",
               "EditorCaption": ""

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Card_run",
+    "\\Card_run\\Views"
   ],
-  "SelectedNode": "\\Card_run.sln",
+  "SelectedNode": "\\Card_run\\Views\\BattleView.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

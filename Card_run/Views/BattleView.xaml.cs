@@ -30,11 +30,11 @@ namespace Card_run.Views
             InitializeComponent();
         }
 
-        public void StartBattle(List<Card> enemyTeam)
+        public void StartBattle(List<Card> enemyTeam, List<Card> playerTeam)
         {
             this.Focus();
             _enemyTeam = enemyTeam;
-            _playerTeam = GeneratePlayerTeam();
+            _playerTeam = playerTeam;
             _allBattleCards = new List<Card>();
             _allBattleCards.AddRange(_playerTeam);
             _allBattleCards.AddRange(_enemyTeam);
@@ -44,25 +44,10 @@ namespace Card_run.Views
                 card.TimeToNextTurn = 1000.0 / card.Speed;
             }
 
-            // Очищаем журнал перед началом нового боя
             BattleLogPanel.Children.Clear();
             AddLogEntry("Бой начался!");
 
             InitializeBattle();
-        }
-
-        private List<Card> GeneratePlayerTeam()
-        {
-            // Временная генерация команды игрока. 
-            // Позже здесь будет загрузка колоды игрока.
-            var allCards = DataLoader.GetAllCards();
-            var playerTeam = new List<Card>();
-            for (int i = 0; i < 3; i++)
-            {
-                var cardTemplate = allCards[i];
-                playerTeam.Add(new Card(cardTemplate));
-            }
-            return playerTeam;
         }
 
         private void InitializeBattle()
@@ -426,27 +411,6 @@ namespace Card_run.Views
             return _playerTeam.Where(c => c.Status == CardStatus.Alive).OrderBy(c => c.CurrentHP).FirstOrDefault();
         }
 
-        // Находит уязвимую карту игрока (с учетом типа урона атакующего)
-        private Card FindPlayerCardVulnerableTo(Card attacker)
-        {
-            return _playerTeam.Where(c => c.Status == CardStatus.Alive && c.DefenceWeaknesses.Contains(attacker.AttackType)).FirstOrDefault();
-        }
-
-        // Находит карту игрока с наименьшей защитой (не считая тех, кто блокирует тип урона)
-        private Card FindPlayerCardWithLowestRelevantDefence(Card attacker)
-        {
-            return _playerTeam
-                .Where(c => c.Status == CardStatus.Alive && !c.DefenceTypes.Contains(attacker.AttackType))
-                .OrderBy(c => c.Defence)
-                .FirstOrDefault();
-        }
-
-        // Находит карту игрока с наименьшей защитой (без фильтров)
-        private Card FindPlayerCardWithLowestDefence()
-        {
-            return _playerTeam.Where(c => c.Status == CardStatus.Alive).OrderBy(c => c.Defence).FirstOrDefault();
-        }
-
         private void ExecuteEnemyAI()
         {
             var attacker = _currentActiveCard;
@@ -458,52 +422,77 @@ namespace Card_run.Views
                 return;
             }
 
-            Card target = alivePlayerCards.First(); // Инициализируем целью первую доступную карту игрока
+            Card target = null;
             bool shouldDefend = false;
 
             var nextPlayerCard = GetNextPlayerCard();
 
             Card FindBestAttackTarget(Card attacker, List<Card> alivePlayerCards)
             {
-                // Приоритет 1: Убить карту, если это возможно.
-                var killTarget = alivePlayerCards.FirstOrDefault(c => CanKillCard(attacker, c));
-                if (killTarget != null) return killTarget;
+                if (!alivePlayerCards.Any()) return null;
 
-                // Приоритет 2: Атаковать уязвимую карту.
-                var vulnerableTarget = alivePlayerCards.FirstOrDefault(c => c.DefenceWeaknesses.Contains(attacker.AttackType));
-                if (vulnerableTarget != null) return vulnerableTarget;
+                var scoredTargets = alivePlayerCards.Select(target =>
+                {
+                    int score = 0;
 
-                // Приоритет 3: Атаковать карту с наименьшей защитой.
-                // Это гарантированный выбор, если есть живые карты.
-                return alivePlayerCards.OrderBy(c => c.Defence).FirstOrDefault();
+                    if (CanKillCard(attacker, target))
+                    {
+                        score = -1000 - target.AD;
+                    }
+                    else
+                    {
+                        score = target.CurrentHP + target.Defence - target.AD;
+
+                        if (target.DefenceWeaknesses.Contains(attacker.AttackType))
+                        {
+                            score -= 50;
+                        }
+                    }
+
+                    return new { Target = target, Score = score };
+                });
+
+                return scoredTargets.OrderBy(t => t.Score).First().Target;
             }
 
             switch (attacker.Type)
             {
                 case CardType.Aggressive:
-                    // Агрессивный ИИ всегда атакует.
                     target = FindBestAttackTarget(attacker, alivePlayerCards);
                     break;
 
                 case CardType.Cautious:
-                    var allyInDanger = FindAllyInDangerOfBeingKilled(nextPlayerCard);
-                    if (allyInDanger != null && CanSupportAllies(attacker))
+                    bool isInAdvantageousState = false;
+                    if (nextPlayerCard != null)
                     {
-                        target = allyInDanger; // Цель для поддержки
-                        shouldDefend = true;
+                        bool hasFullHealth = attacker.CurrentHP == attacker.MaxHP;
+                        bool hasDefensiveAdvantage = attacker.DefenceTypes.Contains(nextPlayerCard.AttackType);
+                        bool hasNumericalAdvantage = _enemyTeam.Count(c => c.Status == CardStatus.Alive) > alivePlayerCards.Count;
+
+                        isInAdvantageousState = hasFullHealth && hasDefensiveAdvantage && hasNumericalAdvantage;
                     }
-                    else if (FindAllyWithLowHealth() != null && CanSupportAllies(attacker))
+
+                    if (!isInAdvantageousState)
                     {
-                        target = FindAllyWithLowHealth(); // Цель для лечения
-                        shouldDefend = true;
+                        var allyInDanger = FindAllyInDangerOfBeingKilled(nextPlayerCard);
+                        if (allyInDanger != null && CanSupportAllies(attacker))
+                        {
+                            target = allyInDanger;
+                            shouldDefend = true;
+                        }
+                        else if (FindAllyWithLowHealth() != null && CanSupportAllies(attacker))
+                        {
+                            target = FindAllyWithLowHealth();
+                            shouldDefend = true;
+                        }
+                        if (nextPlayerCard != null && nextPlayerCard.AD >= attacker.CurrentHP + attacker.Defence && attacker.DefenceMove != DefenceMove.None)
+                            shouldDefend = true;
+                        else if (nextPlayerCard != null && nextPlayerCard.DefenceWeaknesses.Contains(attacker.AttackType) && attacker.CurrentHP <= attacker.MaxHP * 0.3 && attacker.DefenceMove != DefenceMove.None)
+                            shouldDefend = true;
+                        else if (attacker.DefenceMove == DefenceMove.Heal && attacker.CurrentHP <= attacker.MaxHP * 0.5)
+                            shouldDefend = true;
                     }
-                    if (nextPlayerCard != null && nextPlayerCard.AD >= attacker.CurrentHP + attacker.Defence && attacker.DefenceMove != DefenceMove.None)
-                        shouldDefend = true;
-                    else if (nextPlayerCard != null && nextPlayerCard.DefenceWeaknesses.Contains(attacker.AttackType) && attacker.CurrentHP <= attacker.MaxHP * 0.3 && attacker.DefenceMove != DefenceMove.None)
-                        shouldDefend = true;
-                    else if (attacker.DefenceMove == DefenceMove.Heal && attacker.CurrentHP <= attacker.MaxHP * 0.5)
-                        shouldDefend = true;
-                    else if (!shouldDefend) // Если решение не защищаться, выбираем цель для атаки
+                    if (!shouldDefend)
                     {
                         target = FindBestAttackTarget(attacker, alivePlayerCards);
                     }
@@ -528,7 +517,7 @@ namespace Card_run.Views
                         shouldDefend = true;
                     else if (nextPlayerCard != null && nextPlayerCard.DefenceWeaknesses.Contains(attacker.AttackType) && attacker.CurrentHP <= attacker.MaxHP * 0.5 && attacker.DefenceMove != DefenceMove.None)
                         shouldDefend = true;
-                    else if (!shouldDefend) // Если решение не защищаться, выбираем цель для атаки
+                    else if (!shouldDefend)
                     {
                         target = FindBestAttackTarget(attacker, alivePlayerCards);
                     }
@@ -546,8 +535,6 @@ namespace Card_run.Views
             }
             else
             {
-                // Этот блок теперь должен срабатывать только в случае бага,
-                // но оставим его как страховку.
                 EndTurn();
             }
         }

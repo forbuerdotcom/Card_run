@@ -13,9 +13,11 @@ namespace Card_run
         private BattleView _battleView;
         private ShopView _shopView;
         private MainMenu _mainMenu;
+        private PreparationView _preparationView;
         private GameState _gameState;
         private HunterAI _hunterAI;
-        private List<Card> _currentEnemyTeam; // Храним команду врагов для текущего боя
+        private List<Card> _currentEnemyTeam;
+        private List<Card> _playerDeck;
 
         public MainWindow()
         {
@@ -25,12 +27,15 @@ namespace Card_run
             _gameMapView = new GameMapView();
             _battleView = new BattleView();
             _shopView = new ShopView();
+            _preparationView = new PreparationView();
             _hunterAI = new HunterAI();
 
             _gameMapView.MovePlayerRequested += OnPlayerMoved;
             _battleView.BattleEnded += OnBattleEnded;
             _shopView.ReturnToMap += OnShopExit;
-            
+            _preparationView.StartGameRequested += OnStartGameRequested;
+            _preparationView.BackToMenuRequested += OnBackToMenuRequested;
+
             MainContentControl.Content = _mainMenu;
         }
 
@@ -43,16 +48,22 @@ namespace Card_run
         {
             base.OnKeyDown(e);
             if (e.Key == Key.Escape) Application.Current.Shutdown();
-            else if (e.Key == Key.Space) StartNewGame();
+            else if (e.Key == Key.Space) MainContentControl.Content = _preparationView;
         }
 
-        private void StartNewGame()
+        private void OnStartGameRequested(List<Card> playerDeck)
         {
+            _playerDeck = playerDeck;
             var generator = new GraphGenerator();
             var graph = generator.Generate();
             _gameState = new GameState(graph);
             _gameMapView.SetGameState(_gameState);
             MainContentControl.Content = _gameMapView;
+        }
+
+        private void OnBackToMenuRequested()
+        {
+            MainContentControl.Content = _mainMenu;
         }
 
         private void OnPlayerMoved(Node destinationNode)
@@ -70,7 +81,7 @@ namespace Card_run
                 }
                 _gameState.PlayerPosition.IsPlayerCurrentPosition = true;
 
-                // --- НОВОЕ: Проверка на усиление врагов ---
+                // ---  Проверка на усиление врагов ---
                 if (destinationNode.IsBattleNode)
                 {
                     // Формируем команду врагов
@@ -90,9 +101,9 @@ namespace Card_run
                     }
 
                     // Запускаем бой
-                    _battleView.StartBattle(_currentEnemyTeam);
+                    _battleView.StartBattle(_currentEnemyTeam, _playerDeck);
                     MainContentControl.Content = _battleView;
-                    return; // Важно! Прерываем выполнение, чтобы не вернуться на карту сразу
+                    return;
                 }
 
                 // Если это не бой, продолжаем обычную логику
@@ -184,7 +195,8 @@ namespace Card_run
             if (_gameState.PlayerPosition.IsFinish)
             {
                 MessageBox.Show("Победа! Ты добрался до финиша!");
-                StartNewGame();
+                // ИЗМЕНЕНО: Возвращаемся в главное меню, а не начинаем новую игру
+                MainContentControl.Content = _mainMenu;
             }
         }
 
