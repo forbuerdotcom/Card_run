@@ -42,22 +42,23 @@ Card Run
 
 - Установка и запуск 
 
-    Клонируйте репозиторий: 
-     
-     
+    - # 1. **Клонируйте репозиторий**:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
 
-     
-    1
-    git clone https://github.com/yourusername/Card_run.git
-     
-     
-      
+   Откройте проект: Запустите файл Card_run.sln в среде Visual Studio
 
-    Откройте проект в Visual Studio 2019 или выше.  
+   Соберите и запустите: Нажмите F5 или выберите в меню Отладка -> Запуск без отладки
 
-    Восстановите пакеты NuGet (если необходимо).  
-
-    Запустите проект через Visual Studio или соберите его и запустите .exe файл из папки bin/Debug или bin/Release.  
+- # 2. **Установите .zip файл**
+  ```bash
+   Установите .zip файл и разорхивируйте в папку
+   После, откройте файл .sln используя (Используйте любую среду разработки с поддержкой C#)
+   Нажмите кнопку RUN
+- И
+  ```bash
+  Откройте .exe файл по дерективе: ...\Card_run\Card_run\bin\Debug\net9.0-windows\Card_run.exe
 
 - Геймплей 
 Подготовка к игре 
