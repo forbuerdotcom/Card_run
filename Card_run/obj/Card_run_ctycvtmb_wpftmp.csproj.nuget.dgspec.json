@@ -1,0 +1,103 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Нейтрон\\Documents\\GitHub\\Card_run\\Card_run\\Card_run.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Нейтрон\\Documents\\GitHub\\Card_run\\Card_run\\Card_run.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Нейтрон\\Documents\\GitHub\\Card_run\\Card_run\\Card_run.csproj",
+        "projectName": "Card_run",
+        "projectPath": "C:\\Users\\Нейтрон\\Documents\\GitHub\\Card_run\\Card_run\\Card_run.csproj",
+        "packagesPath": "C:\\Users\\Нейтрон\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Нейтрон\\Documents\\GitHub\\Card_run\\Card_run\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Нейтрон\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0-windows7.0": {
+            "targetAlias": "net9.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Xunit.StaFact": {
+              "target": "Package",
+              "version": "[3.0.13, )"
+            },
+            "xunit.v3.assert": {
+              "target": "Package",
+              "version": "[3.2.1, )"
+            },
+            "xunit.v3.common": {
+              "target": "Package",
+              "version": "[3.2.1, )"
+            },
+            "xunit.v3.extensibility.core": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

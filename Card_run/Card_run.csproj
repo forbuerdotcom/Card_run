@@ -16,6 +16,10 @@
       </Page>
     </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="TestsUI_Card_Run" />
+  </ItemGroup>
+
     <ItemGroup>
       <None Remove="Assets\card.png" />
       <None Remove="Assets\cards_collection.png" />

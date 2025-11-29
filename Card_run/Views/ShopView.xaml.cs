@@ -23,9 +23,9 @@ namespace Card_run.Views
 
         // Оригинальные карты колоды (не изменяются, используются как шаблоны)
         private List<Card> _originalDeck = new List<Card>();
-        
+
         // Карты для отображения (с примененными улучшениями)
-        private List<Card> _playerDeck = new List<Card>();
+        internal List<Card> _playerDeck = new List<Card>();
         
         // Словарь улучшений: ключ - оригинальная карта, значение - количество уровней улучшения
         private Dictionary<Card, int> _cardUpgrades = new Dictionary<Card, int>();
@@ -42,9 +42,9 @@ namespace Card_run.Views
         
         // Состояние игры для доступа к золоту и счету
         private GameState _gameState;
-        
+
         // Путь к файлу с сохраненными улучшениями
-        private static readonly string UpgradesFilePath = "Data/CardUpgrades.json";
+        internal static string UpgradesFilePath = "Data/CardUpgrades.json";
 
         /// <summary>
         /// Конструктор представления магазина.
@@ -116,7 +116,7 @@ namespace Card_run.Views
         /// Загружает колоду игрока из файла.
         /// Создает копии оригинальных карт и применяет сохраненные улучшения.
         /// </summary>
-        private void LoadPlayerDeck()
+        internal void LoadPlayerDeck()
         {
             // Загружаем оригинальные карты из файла (не изменяем их)
             var loadedDeck = DeckManager.LoadDeck();
@@ -350,7 +350,7 @@ namespace Card_run.Views
         /// Помещает карту в зону выбора для улучшения.
         /// Отображает информацию о карте и стоимость улучшения.
         /// </summary>
-        private void PlaceCardInDropZone(Card originalCard)
+        internal void PlaceCardInDropZone(Card originalCard)
         {
             // Сохраняем выбранную карту
             _selectedCardForUpgrade = originalCard;
@@ -395,7 +395,7 @@ namespace Card_run.Views
         /// Обработчик нажатия кнопки "Улучшить".
         /// Проверяет наличие золота, применяет улучшение и обновляет интерфейс.
         /// </summary>
-        private void UpgradeButton_Click(object sender, RoutedEventArgs e)
+        internal void UpgradeButton_Click(object sender, RoutedEventArgs e)
         {
             // Проверяем, что карта выбрана и состояние игры установлено
             if (_selectedCardForUpgrade == null || _gameState == null)

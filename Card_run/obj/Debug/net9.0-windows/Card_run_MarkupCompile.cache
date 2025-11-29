@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Предметы 3 семестр\Теоретическая информатика\Новая папка\Card_run\Card_run\obj\Debug\net9.0-windows\
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\obj\Debug\net9.0-windows\
 Card_run
 none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-D:\Предметы 3 семестр\Теоретическая информатика\Новая папка\Card_run\Card_run\App.xaml
+C:\Users\Нейтрон\Documents\GitHub\Card_run\Card_run\App.xaml
 9-909097585
 
 201983601657
-201-1910228055
+20131288781
 MainWindow.xaml;Views\BattleCardControl.xaml;Views\BattleView.xaml;Views\CardListItemControl.xaml;Views\GameMapView.xaml;Views\GameOverView.xaml;Views\MainMenu.xaml;Views\PreparationView.xaml;Views\ShopView.xaml;
 
-True
+False
 

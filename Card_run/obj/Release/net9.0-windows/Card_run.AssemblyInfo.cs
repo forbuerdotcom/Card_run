@@ -14,10 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Card_run")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8781474d687f382819ebb5ce94959789b52fb885")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91ab44ae8aab6d0db9766b9d36abb2dcf7b91d83")]
 [assembly: System.Reflection.AssemblyProductAttribute("Card_run")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Card_run")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("TestsUI_Card_Run")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
