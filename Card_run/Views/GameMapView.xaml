@@ -26,7 +26,10 @@
                 <TextBlock x:Name="GoldTextBlock" Text="0" FontSize="24" Foreground="White" FontWeight="Bold" Margin="0,0,0,15"/>
                 
                 <TextBlock Text="Счет:" FontSize="18" Foreground="Cyan" FontWeight="Bold" Margin="0,0,0,5"/>
-                <TextBlock x:Name="ScoreTextBlock" Text="0" FontSize="24" Foreground="White" FontWeight="Bold"/>
+                <TextBlock x:Name="ScoreTextBlock" Text="0" FontSize="24" Foreground="White" FontWeight="Bold" Margin="0,0,0,15"/>
+                
+                <Button Content="Инструкция" Width="150" Height="40" Click="ShowInstruction_Click" 
+                        Background="DarkBlue" Foreground="White" FontWeight="Bold" BorderThickness="2" BorderBrush="Navy"/>
             </StackPanel>
         </Border>
     </Grid>

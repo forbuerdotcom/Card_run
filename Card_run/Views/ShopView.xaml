@@ -128,5 +128,17 @@
                 HorizontalAlignment="Right"
                 Margin="20"
                 Click="ExitButton_Click"/>
+        
+        <!-- Кнопка инструкции -->
+        <Button Grid.Row="1" Grid.Column="1" 
+                Content="Инструкция" 
+                Width="200" 
+                Height="50" 
+                FontSize="16" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="20"
+                Click="ShowInstruction_Click"
+                Background="DarkBlue" Foreground="White" FontWeight="Bold" BorderThickness="2" BorderBrush="Navy"/>
     </Grid>
 </UserControl>
