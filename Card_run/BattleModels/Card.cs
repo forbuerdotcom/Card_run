@@ -123,7 +123,7 @@ namespace Card_run.BattleModels
         {
             Name = other.Name;
             MaxHP = other.MaxHP;
-            CurrentHP = other.MaxHP;
+            CurrentHP = other.CurrentHP;
             Speed = other.Speed;
             Defence = other.Defence;
             DefenceTypes = new List<DamageType>(other.DefenceTypes);

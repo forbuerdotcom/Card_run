@@ -20,9 +20,9 @@ namespace Card_run.Views
 
         // Список всех доступных карт в игре (загружается из файла)
         private List<Card> _allCards;
-        
+
         // Колода игрока - карты, которые он выбрал для игры
-        private List<Card> _playerDeck = new List<Card>();
+        internal List<Card> _playerDeck = new List<Card>();
 
         /// <summary>
         /// Конструктор представления подготовки колоды.
@@ -83,7 +83,7 @@ namespace Card_run.Views
         /// Обработчик клика по карте.
         /// Если карта уже в колоде - удаляет её, если нет - добавляет (с проверкой ограничений).
         /// </summary>
-        private void OnCardClicked(Card clickedCard)
+        internal void OnCardClicked(Card clickedCard)
         {
             // Проверяем, находится ли карта уже в колоде игрока
             bool cardIsInDeck = _playerDeck.Contains(clickedCard);
@@ -230,7 +230,7 @@ namespace Card_run.Views
         /// Проверяет, соответствует ли колода всем ограничениям.
         /// Возвращает true, если колода валидна, иначе false с сообщением об ошибке.
         /// </summary>
-        private bool IsDeckValid(List<Card> deck, out string errorMessage)
+        internal bool IsDeckValid(List<Card> deck, out string errorMessage)
         {
             errorMessage = null;
 

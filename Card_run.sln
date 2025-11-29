@@ -1,6 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card_run", "Card_run\Card_run.csproj", "{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_Card_Run", "Tests_Card_Run\Tests_Card_Run.csproj", "{B170D68C-2016-41C8-8986-460C215AEE4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +19,18 @@ Global
 		{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A90C2240-F991-4AFC-A201-B9AA6CE6D0DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B170D68C-2016-41C8-8986-460C215AEE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B170D68C-2016-41C8-8986-460C215AEE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B170D68C-2016-41C8-8986-460C215AEE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B170D68C-2016-41C8-8986-460C215AEE4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B170D68C-2016-41C8-8986-460C215AEE4A} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35A94058-B59C-4FEF-A4F1-C5C1637B1538}
 	EndGlobalSection
 EndGlobal

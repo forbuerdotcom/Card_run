@@ -85,7 +85,7 @@ namespace Card_run.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Card_run;component/views/battlecardcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Card_run;V1.0.0.0;component/views/battlecardcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\BattleCardControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

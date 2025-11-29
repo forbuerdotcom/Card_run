@@ -16,9 +16,9 @@ namespace Card_run.Models
         
         // Текущая позиция игрока на графе
         public Node PlayerPosition { get; private set; }
-        
+
         // Счетчик ходов игрока (используется для определения начала расширения охотника)
-        public int PlayerMoveCount { get; private set; } = 0;
+        public int PlayerMoveCount { get; internal set; } = 0;
         
         // Количество посещенных узлов (для статистики и счета)
         public int NodesVisited { get; set; } = 0;
@@ -76,6 +76,10 @@ namespace Card_run.Models
         /// <returns>true, если перемещение успешно, false, если узел не является соседом</returns>
         public bool MovePlayer(Node destinationNode)
         {
+            if (destinationNode == null)
+            {
+                throw new ArgumentNullException(nameof(destinationNode));
+            }
             // Проверяем, является ли целевой узел соседом текущей позиции игрока
             // Рёбра могут быть направленными или ненаправленными, поэтому проверяем оба варианта
             bool isNeighbor = CurrentGraph.Edges.Contains((PlayerPosition.Id, destinationNode.Id)) ||
