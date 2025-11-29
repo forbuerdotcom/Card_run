@@ -81,5 +81,10 @@
         <!-- Кнопка выхода -->
         <Button Content="Выйти из боя" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
                 Width="150" Height="40" Margin="10" Click="ExitBattle_Click"/>
+        
+        <!-- Кнопка инструкции -->
+        <Button Content="Инструкция" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                Width="150" Height="40" Margin="10" Click="ShowInstruction_Click" 
+                Background="DarkBlue" Foreground="White" FontWeight="Bold" BorderThickness="2" BorderBrush="Navy"/>
     </Grid>
 </UserControl>

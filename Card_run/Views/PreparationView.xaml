@@ -87,6 +87,7 @@
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
             <Button x:Name="StartGameButton" Content="Начать забег" Width="150" Height="40" Margin="0,5" IsEnabled="False" Click="StartGame_Click"/>
             <Button x:Name="ClearDeckButton" Content="Очистить колоду" Width="150" Height="40" Margin="0,5" Click="ClearDeck_Click"/>
+            <Button Content="Инструкция" Width="150" Height="40" Margin="0,5" Click="ShowInstruction_Click"/>
             <Button Content="В меню" Width="150" Height="40" Margin="0,5" Click="BackToMenu_Click"/>
         </StackPanel>
 
