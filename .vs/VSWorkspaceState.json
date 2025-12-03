@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Card_run",
+    "\\Card_run\\BattleModels",
     "\\Card_run\\Models",
-    "\\Card_run\\Views"
+    "\\Card_run\\Views",
+    "\\Tests_Card_Run"
   ],
   "SelectedNode": "\\Card_run.sln",
   "PreviewInSolutionExplorer": false
